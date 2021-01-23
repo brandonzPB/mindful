@@ -1,23 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import  React, { useState } from 'react';
+import { HashRouter, BrowserRouter, Route, } from 'react-router-dom';
+import FacebookLogin from 'react-facebook-login';
 
 function App() {
+  const [loggedIn, setLoggedIn] = useState(false);
+
+  const responseFacebook = response => {
+    console.log('response', response);
+    if (loggedIn) return;
+    setLoggedIn(!loggedIn);
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="login-container" style={{ display: loggedIn ? 'none' : '' }}>
+        <FacebookLogin
+          appId="3644277315654948"
+          autoLoad={true}
+          fields="name,email,picture"
+          // onClick={componentClicked}
+          callback={responseFacebook} 
+        />
+      </div>
     </div>
   );
 }
