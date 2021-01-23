@@ -7,6 +7,7 @@ function App() {
 
   const responseFacebook = response => {
     console.log('response', response);
+    const name = response.name;
     if (loggedIn) return;
     setLoggedIn(!loggedIn);
   }
