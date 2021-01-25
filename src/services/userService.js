@@ -1,6 +1,20 @@
 import axios from 'axios';
 const baseUrl = '/dashboard/user';
 
+const check = (userObject) => {
+  const req = axios.post(`${baseUrl}/check`, userObject);
+
+  return req.then(res => res.data)
+    .catch(err => console.error(err));
+}
+
+const create = (userObject) => {
+  const req = axios.post(`${baseUrl}/create`, userObject);
+
+  return req.then(res => res.data)
+    .catch(err => console.error(err));
+}
+
 const login = (userObject) => {
   const req = axios.post(`${baseUrl}/login`, userObject);
 
@@ -31,6 +45,8 @@ const completeEntry = (userObject, userId, token) => {
 }
 
 export default {
+  check,
+  create,
   login,
   getUserInfo,
   completeEntry,
