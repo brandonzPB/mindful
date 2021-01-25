@@ -5,7 +5,7 @@ import { UserContext } from '../contexts/UserContext';
 import userService from '../services/userService';
 
 const Welcome = () => {
-  const { user, login } = useContext(UserContext);
+  const { user, login, dispatch } = useContext(UserContext);
 
   const [creationDone, setCreationDone] = useState(false);
 
@@ -23,11 +23,21 @@ const Welcome = () => {
       email: response.email
     };
 
-    const result = await userService.check(user);
+    const res = await userService.check(user);
+    console.log('result', res.result);
 
-    if (result === null) {
+    if (res.result === null) {
       await userService.create(user)
-        .then(res => res).catch(err => console.error(err));
+        .then(res => {
+          console.log('res', res);
+
+          dispatch({ type: 'CREATE_USER', user: {
+            email: res.email
+          }});
+
+          return res;
+        })
+        .catch(err => console.error(err));
 
       if (creationDone) return;
       return setCreationDone(!creationDone);
@@ -45,7 +55,7 @@ const Welcome = () => {
             <Redirect to="/terms" />
           </Route>
           : <div className="login-container">
-            <div className="login-container" style={{ display: loggedIn ? 'none' : '' }}>
+            <div className="login-container">
               <FacebookLogin
                 appId="3644277315654948"
                 autoLoad={true}

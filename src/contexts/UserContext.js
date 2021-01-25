@@ -5,24 +5,33 @@ import userService from '../services/userService';
 export const UserContext = createContext();
 
 const UserContextProvider = (props) => {
-  const [user, dispatch] = useReducer(userReducer, [], () => {
-    const storedUser = localStorage.getItem('my-user');
-    return storedUser
-      ? JSON.parse(storedUser)
-      : {};
-  });
+  // const [user, dispatch] = useReducer(userReducer, [], () => {
+  //   const storedUser = localStorage.getItem('my-user');
+  //   return storedUser
+  //     ? JSON.parse(storedUser)
+  //     : {};
+  // });
 
-  useEffect(() => {
-    localStorage.setItem('my-user', JSON.stringify(user));
-  }, [user]);
+  // useEffect(() => {
+  //   localStorage.setItem('my-user', JSON.stringify(user));
+  // }, [user]);
+
+  const [user, dispatch] = useReducer(userReducer, {});
 
   const login = user => {
     userService.login(user)
       .then(res => {
         console.log('res', res);
         
-        // call dispatch
-        
+        dispatch({ type: 'LOG_IN', user: {
+          name: res.name,
+          email: res.email,
+          entries: res.entries,
+          id: res.id,
+          _id: res._id,
+          accessToken: res.accessToken
+        }});
+
         return res;
       })
       .catch(err => console.error(err));

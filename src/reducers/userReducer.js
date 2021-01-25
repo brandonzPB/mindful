@@ -1,5 +1,10 @@
 const userReducer = (state, action) => {
   switch(action.type) {
+    case 'CREATE_USER':
+      return {
+        ...state,
+        tempEmail: action.user.email
+      };
     case 'LOG_IN':
       return {
         ...state,
@@ -24,6 +29,7 @@ const userReducer = (state, action) => {
         id: '',
         _id: '',
         accessToken: '',
+        tempEmail: '',
       };
     default:
       return state;

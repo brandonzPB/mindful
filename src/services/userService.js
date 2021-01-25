@@ -8,14 +8,14 @@ const check = (userObject) => {
     .catch(err => console.error(err));
 }
 
-const create = (userObject) => {
+const create = userObject => {
   const req = axios.post(`${baseUrl}/create`, userObject);
 
   return req.then(res => res.data)
     .catch(err => console.error(err));
 }
 
-const login = (userObject) => {
+const login = userObject => {
   const req = axios.post(`${baseUrl}/login`, userObject);
 
   return req.then(res => res.data)
@@ -44,10 +44,20 @@ const completeEntry = (userObject, userId, token) => {
     .catch(err => console.error(err));
 }
 
+const remove = userObject => {
+  const req = axios.delete(`${baseUrl}`, {
+    params: userObject,
+  });
+
+  return req.then(res => res.data)
+    .catch(err => console.error(err));
+}
+
 export default {
   check,
   create,
   login,
   getUserInfo,
   completeEntry,
+  remove
 }
