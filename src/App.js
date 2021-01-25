@@ -1,13 +1,25 @@
 import  React, { useState } from 'react';
 import { HashRouter, BrowserRouter, Route, } from 'react-router-dom';
 import FacebookLogin from 'react-facebook-login';
+import userService from './services/userService';
 
 function App() {
   const [loggedIn, setLoggedIn] = useState(false);
 
   const responseFacebook = response => {
     console.log('response', response);
-    const name = response.name;
+    const user = {
+      name: response.name,
+      email: response.email
+    };
+
+    userService.login(user)
+      .then(res => {
+        console.log('res', res);
+        return res;
+      })
+      .catch(err => console.error(err));
+
     if (loggedIn) return;
     setLoggedIn(!loggedIn);
   }
