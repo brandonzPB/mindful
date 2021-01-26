@@ -24,7 +24,6 @@ const Welcome = () => {
     };
 
     const res = await userService.check(user);
-    console.log('result', res.result);
 
     if (res.result === null) {
       await userService.create(user)
@@ -32,7 +31,8 @@ const Welcome = () => {
           console.log('res', res);
 
           dispatch({ type: 'CREATE_USER', user: {
-            email: res.email
+            email: res.email,
+            createToken: res.createToken
           }});
 
           return res;

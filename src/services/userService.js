@@ -44,9 +44,12 @@ const completeEntry = (userObject, userId, token) => {
     .catch(err => console.error(err));
 }
 
-const remove = userObject => {
+const remove = (userObject, token) => {
   const req = axios.delete(`${baseUrl}`, {
     params: userObject,
+    headers: {
+      'Authorization': `Bearer ${token}`
+    }
   });
 
   return req.then(res => res.data)

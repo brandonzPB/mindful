@@ -3,7 +3,8 @@ const userReducer = (state, action) => {
     case 'CREATE_USER':
       return {
         ...state,
-        tempEmail: action.user.email
+        email: action.user.email,
+        createToken: action.user.createToken
       };
     case 'LOG_IN':
       return {
@@ -29,7 +30,7 @@ const userReducer = (state, action) => {
         id: '',
         _id: '',
         accessToken: '',
-        tempEmail: '',
+        createToken: '',
       };
     default:
       return state;
