@@ -37,13 +37,19 @@ const UserContextProvider = (props) => {
       .catch(err => console.error(err));
   }
 
+  const updateEntries = () => {
+    userService.completeEntry(user, user._id, user.accessToken)
+      .then(res => res)
+      .catch(err => console.error(err));
+  }
+
   const logout = () => {
     dispatch({ type: 'LOG_OUT' });
     localStorage.removeItem('my-user');
   }
 
   return (
-    <UserContext.Provider value={{ user, dispatch, login, logout }}>
+    <UserContext.Provider value={{ user, dispatch, login, updateEntries, logout }}>
       {props.children}
     </UserContext.Provider>
   )

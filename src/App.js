@@ -4,6 +4,7 @@ import UserContextProvider from './contexts/UserContext';
 import Welcome from './components/Welcome';
 import Dashboard from './components/Dashboard';
 import Terms from './components/Terms';
+import EntryForm from './components/EntryForm';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
           <Route exact path="/" component={Welcome} />
           <Route exact path="/dashboard" component={Dashboard} />
           <Route exact path="/terms" component={Terms} />
+          <Route exact path="/entry" component={EntryForm} />
         </UserContextProvider>
       </div>
     </BrowserRouter>
