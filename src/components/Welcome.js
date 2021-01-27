@@ -54,8 +54,9 @@ const Welcome = () => {
           ? <Route exact path="/">
             <Redirect to="/terms" />
           </Route>
-          : <div className="login-container">
-            <div className="login-container">
+          : <div className="welcome-login-container">
+            <span className="welcome-text">welcome to mindful.io</span>
+            <div className="login-btn-container">
               <FacebookLogin
                 appId="3644277315654948"
                 autoLoad={true}

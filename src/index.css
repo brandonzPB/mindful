@@ -11,3 +11,56 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@700&display=swap');
+
+.html {
+  background-image: linear-gradient(25deg,
+    rgba(),
+    rgba()),
+    url('./images/background.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  font-size: 15px;
+}
+
+.App {
+  width: 100vw;
+  height: 100vh;
+  margin: 0 auto;
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* WELCOME */
+
+.welcome-container {}
+
+.welcome-login-container {}
+
+.welcome-text {}
+
+.login-btn-container {}
+
+/* TERMS */
+
+.terms-container {}
+
+.terms-inner-container {}
+
+.terms-text-container {}
+
+.terms-header {}
+
+.terms-text {}
+
+.reject-btn {}
+
+/* DASHBOARD */
+
+.dashboard-container {}
+
+.entry-container {}

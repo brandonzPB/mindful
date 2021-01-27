@@ -45,9 +45,14 @@ const Terms = () => {
           ? <Route exact path="/terms">
             <Redirect to="/" />
           </Route>
-          : <div className="terms-text">
-            <h1>Terms</h1>
-            <span className="login-info">Click the "Login with Facebook" below if you accept these terms and conditions</span>
+          : <div className="terms-inner-container">
+            <div className="terms-text-container">
+              <span className="terms-header">Our Terms, Your Privacy</span>
+              <span className="terms-text">We only collect the name and email you provide to Facebook.</span>
+              <span className="terms-text">We don't collect your responses to questions, nor do we track you in any way.</span>
+              <span className="terms-text">The sole purpose of this app is to provide a resource to you that can help you become a more mindful and happy person</span>
+            </div>
+            <span className="terms-text">Click the "Login with Facebook" below if you accept these terms and conditions</span>
             <FacebookLogin
               appId="3644277315654948"
               autoLoad={true}
@@ -55,7 +60,7 @@ const Terms = () => {
               // onClick={componentClicked}
               callback={acceptTerms} 
             />
-            <span className="login-info">Otherwise, click "Reject Terms"</span>
+            <span className="terms-text">Otherwise, click "Reject Terms"</span>
             <button onClick={rejectTerms} className="reject-btn">Reject Terms</button>
           </div>
       }
