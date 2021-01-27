@@ -12,6 +12,7 @@ const userReducer = (state, action) => {
         name: action.user.name,
         email: action.user.email,
         entries: action.user.entries,
+        tempText: [],
         id: action.user.id,
         _id: action.user._id,
         accessToken: action.user.accessToken,
@@ -19,7 +20,11 @@ const userReducer = (state, action) => {
     case 'COMPLETE_ENTRY':
       return {
         ...state,
-        entries: action.user.entries
+        entries: action.user.entries,
+        tempText: [
+          ...state.tempText,
+          action.user.text,
+        ],
       };
     case 'LOG_OUT':
       return {
@@ -31,6 +36,7 @@ const userReducer = (state, action) => {
         _id: '',
         accessToken: '',
         createToken: '',
+        tempText: '',
       };
     default:
       return state;
