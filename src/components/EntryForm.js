@@ -2,14 +2,16 @@ import React, { useState, useContext } from 'react';
 import { Route, Redirect } from 'react-router-dom';
 import { UserContext } from '../contexts/UserContext';
 import Entry from './Entry';
+import Modal from './Modal';
 
 const EntryForm = () => {
   const { user, dispatch, updateEntries } = useContext(UserContext);
 
   const [entry, setEntry] = useState({ text: '' });
 
-  const shareUrl = 'https://brandonzpb.github.io/creatures';
-  const title = 'Live in the Present with Mindful.io';
+  const [modalState, setModalState] = useState({ show: false });
+
+  const [returnHome, setReturnHome] = useState({ route: false });
 
   if (!user.accessToken) {
     return (
@@ -19,20 +21,23 @@ const EntryForm = () => {
     )
   }
 
-  const downloadTxt = () => {
-    const element = document.createElement('a');
+  const openModal = () => {
+    setModalState({
+      ...modalState,
+      show: true
+    });
+  }
 
-    const file = new Blob([ user.tempText[user.entries - 1].input ], { type: 'text/plain' });
+  const closeModal = () => {
+    setModalState({
+      ...modalState,
+      show: false
+    });
 
-    /*
-    document.getElementById('entry-input').value
-    */
-
-    element.href = URL.createObjectURL(file);
-      element.download = `myFile${user.entries - 1}.txt`;
-    
-    document.body.appendChild(element);
-    element.click();
+    setReturnHome({
+      ...returnHome,
+      route: true
+    });
   }
 
   const handleChange = event => {
@@ -58,22 +63,34 @@ const EntryForm = () => {
     // update database info
     // updateEntries(count);
 
-    // show modal
+    openModal();
   }
 
   return (
-    <div className="form-container">
-      <form onSubmit={handleSubmit} className="entry-form">
-        <Entry />
-        <input 
-          className="entry-input"
-          id="entry-input"
-          type="text"
-          value={entry.text}
-          onChange={handleChange}
-        />
-        <button className="submit-btn">Complete Entry</button>
-      </form>
+    <div className="entry-container">
+
+      {
+        returnHome.route
+          ? <Route exact path="/entry">
+            <Redirect to="/dashboard" />
+          </Route>
+          : <div className="form-container">
+            <form onSubmit={handleSubmit} className="entry-form">
+              <Entry />
+              <input 
+                className="entry-input"
+                id="entry-input"
+                type="text"
+                value={entry.text}
+                onChange={handleChange}
+              />
+              <button className="submit-btn toggle-button">Complete Entry</button>
+            </form>
+
+            <Modal modalState={modalState} closeModal={closeModal} />
+          </div>
+      }
+
     </div>
   );
 }
