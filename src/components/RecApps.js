@@ -1,7 +1,18 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useContext } from 'react';
+import { Link, Route, Redirect } from 'react-router-dom';
+import { UserContext } from '../contexts/UserContext';
 
 const RecApps = () => {
+  const { user } = useContext(UserContext);
+
+  if (!user.accessToken) {
+    return (
+      <Route exact path="/apps">
+        <Redirect to="/" />
+      </Route>
+    )
+  }
+
   return (
     <div className="rec-app-container">
       <span className="rec-text">Try out these apps if you'd like an app-guided meditation</span>

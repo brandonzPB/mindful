@@ -102,9 +102,37 @@ html {
 
 .dashboard-container {}
 
+.dashboard-top-text {}
+
+.info-container {}
+
+.info-btn {}
+
+.info-container a,
+.info-container a:link,
+.info-container a:visited {}
+
 .dashboard-header {}
 
 .dashboard-text {}
+
+.dashboard-text-link {}
+
+/* REC VIDEOS */
+
+.rec-videos-container {}
+
+.video-text {}
+
+.video {}
+
+/* REC APPS */
+
+.rec-app-container {}
+
+.rec-text {}
+
+
 
 /* ENTRY PAGE */
 

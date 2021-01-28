@@ -31,14 +31,14 @@ const Dashboard = () => {
 
   return (
     <div className="dashboard-container">
-      <h1>
+      <h1 className="dashboard-top-text">
         {
           user.entries > 0
             ? `Welcome back, ${user.firstName} :)`
             : `Welcome ${user.firstName} :)`
         }
       </h1>
-      <h1>
+      <h1 className="dashboard-top-text">
         {
           user.entries > 0
             ? `You've completed ${user.entries} mindfulness entries so far! Keep up the good work, and you'll see increased mindfulness in your daily life`
@@ -50,8 +50,13 @@ const Dashboard = () => {
         infoState.open
           ? <div className="info-container">
             <button className="info-btn" onClick={hideInfo}>Hide Info</button>
+            
             <span className="dashboard-text">
-              <a href="https://www.mindful.org/meditation/mindfulness-getting-started/" target="_blank" rel="noreferrer">What is mindfulness?</a>
+              <a 
+                href="https://www.mindful.org/meditation/mindfulness-getting-started/" 
+                target="_blank" rel="noreferrer">
+                  What is mindfulness?
+              </a>
             </span>
             
             <span className="dashboard-text">
@@ -74,27 +79,27 @@ const Dashboard = () => {
 
       <span className="dashboard-header">Guided Meditation Links</span>
       <Link to="/videos">
-        <p className="dashboard-text">
+        <p className="dashboard-text-link">
           View Recommended Videos
         </p>
       </Link>
 
       <Link to="/apps">
-        <p className="dashboard-text">
+        <p className="dashboard-text-link">
           View Recommended Apps
         </p>
       </Link>
 
       <span className="dashboard-header">Don't want a guided meditation today?</span>
       <Link to="/timer">
-        <p className="dashboard-text">
+        <p className="dashboard-text-link">
           Go to Meditation Timer
         </p>
       </Link>
       
       <span className="dashboard-header">Already meditated? Answer a question to...</span>
       <Link to="/entry">
-        <p className="dashboard-text">
+        <p className="dashboard-text-link">
           Boost your Mindfulness
         </p>
       </Link>

@@ -25,6 +25,12 @@ const Modal = ({ modalState, closeModal }) => {
     element.click();
   }
 
+  if (!user.accessToken) {
+    return (
+      <div className="empty"></div>
+    )
+  }
+
   if (!modalState.show) {
     return (
       <div className="null"></div>
