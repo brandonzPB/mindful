@@ -22,9 +22,17 @@ const UserContextProvider = (props) => {
     userService.login(user)
       .then(res => {
         console.log('res', res);
+
+        const whiteSpaceIndex = res.name.indexOf(' ');
+
+        let firstName = '';
+        for (let i = 0; i < whiteSpaceIndex; i++) {
+          firstName += res.name[i];
+        }
         
         dispatch({ type: 'LOG_IN', user: {
           name: res.name,
+          firstName,
           email: res.email,
           entries: res.entries,
           id: res.id,

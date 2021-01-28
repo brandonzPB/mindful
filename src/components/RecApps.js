@@ -1,10 +1,10 @@
 import React from 'react';
 
-const Videos = () => {
+const RecApps = () => {
 
   return (
     <div className="container"></div>
   );
 }
 
-export default Videos;
+export default RecApps;

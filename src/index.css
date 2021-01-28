@@ -16,10 +16,25 @@ code {
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@700&display=swap');
 
-.html {
+/*
+rgb(83,95,45);
+rgb(217,196,179);
+rgb(161,177,130);
+rgb(127,93,83);
+*/
+
+.test {
+  color: rgb(83,95,45);
+  color: rgb(217,196,179);
+  color: rgb(248,244,232);
+  color: rgb(161,177,130);
+  color: rgb(127,93,83);
+}
+
+html {
   background-image: linear-gradient(25deg,
-    rgba(),
-    rgba()),
+    rgba(83, 95, 45, 0.5),
+    rgba(120, 131, 83, 0.5)),
     url('./images/background.jpg');
   background-size: cover;
   background-repeat: no-repeat;
@@ -33,17 +48,33 @@ code {
   height: 100vh;
   margin: 0 auto;
   font-family: 'Montserrat', sans-serif;
+  overflow: hidden;
 }
 
 /* WELCOME */
 
-.welcome-container {}
+.welcome-container {
+  margin: 200px auto 0 auto;
+  display: flex;
+  flex: 1;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  color: rgb(248,244,232);
+  font-size: 7rem;
+  width: 90%;
+  height: auto;
+}
 
 .welcome-login-container {}
 
 .welcome-text {}
 
-.login-btn-container {}
+.login-btn-container {
+  margin: 0 auto;
+  text-align: center;
+}
 
 /* TERMS */
 

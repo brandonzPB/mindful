@@ -10,6 +10,7 @@ const userReducer = (state, action) => {
       return {
         ...state,
         name: action.user.name,
+        firstName: action.user.firstName,
         email: action.user.email,
         entries: action.user.entries,
         tempText: [],
