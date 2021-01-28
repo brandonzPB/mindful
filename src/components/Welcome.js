@@ -56,6 +56,7 @@ const Welcome = () => {
           </Route>
           : <div className="welcome-login-container">
             <span className="welcome-text">welcome to mindful.io</span>
+            <span className="welcome-text-info">The Facebook app that helps you be more at peace in your daily life with a simple, healthy habit</span>
             <div className="login-btn-container">
               <FacebookLogin
                 appId="3644277315654948"

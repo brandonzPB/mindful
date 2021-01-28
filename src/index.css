@@ -33,8 +33,8 @@ rgb(127,93,83);
 
 html {
   background-image: linear-gradient(25deg,
-    rgba(83, 95, 45, 0.5),
-    rgba(120, 131, 83, 0.5)),
+    rgba(83, 95, 45, 0.4),
+    rgba(120, 131, 83, 0.4)),
     url('./images/background.jpg');
   background-size: cover;
   background-repeat: no-repeat;
@@ -67,9 +67,17 @@ html {
   height: auto;
 }
 
-.welcome-login-container {}
+.welcome-login-container {
+  text-align: center;
+}
 
-.welcome-text {}
+.welcome-text {
+  display: block;
+}
+
+.welcome-text-info {
+  font-size: 2rem;
+}
 
 .login-btn-container {
   margin: 0 auto;
@@ -94,4 +102,18 @@ html {
 
 .dashboard-container {}
 
+.dashboard-header {}
+
+.dashboard-text {}
+
+/* ENTRY PAGE */
+
 .entry-container {}
+
+.form-container {}
+
+.entry-form {}
+
+.entry-input {}
+
+.submit-btn {}
