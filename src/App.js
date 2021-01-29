@@ -5,6 +5,7 @@ import UserContextProvider from './contexts/UserContext';
 import Welcome from './components/Welcome';
 import Terms from './components/Terms';
 import LogoutButton from './components/LogoutButton';
+import Info from './components/Info';
 
 import Dashboard from './components/Dashboard';
 import RecVideos from './components/RecVideos';
@@ -23,6 +24,8 @@ function App() {
           <Route exact path="/" component={Welcome} />
           <Route exact path="/dashboard" component={Dashboard} />
           <Route exact path="/terms" component={Terms} />
+          <Route exact path="/info" component={Info} />
+          
           <Route exact path="/videos" component={RecVideos} />
           <Route exact path="/apps" component={RecApps} />
           <Route exact path="/timer" component={Timer} />

@@ -4,12 +4,11 @@ import { Link, Route, Redirect } from 'react-router-dom';
 import timerImg from '../images/timer.jpeg';
 import videoImg from '../images/video.jpeg';
 import appImg from '../images/app.jpeg';
-import meditateImg from '../images/meditate.jpeg';
+import entryImg from '../images/meditate.jpeg';
+import infoImg from '../images/knowledge.jpeg';
 
 const Dashboard = () => {
-  const { user } = useContext(UserContext);
-
-  const [infoState, setInfoState] = useState({ open: true });
+  const { user, link, setDest } = useContext(UserContext);
 
   if (!user.accessToken) {
     return (
@@ -19,91 +18,54 @@ const Dashboard = () => {
     )
   }
 
-  const showInfo = () => {
-    setInfoState({
-      ...infoState,
-      open: true
-    });
+  if (link.dest === 'info') {
+    return (
+      <Route exact path="/dashboard">
+        <Redirect to="/info" />
+      </Route>
+    )
   }
 
-  const hideInfo = () => {
-    setInfoState({
-      ...infoState,
-      open: false
-    });
+  if (link.dest === 'entry') {
+    return (
+      <Route exact path="/dashboard">
+        <Redirect to="/entry" />
+      </Route>
+    )
   }
 
-  const dashboardStyles = {
-    width: infoState.open ? '50%' : '100%',
+  if (link.dest === 'videos') {
+    return (
+      <Route exact path="/dashboard">
+        <Redirect to="/videos" />
+      </Route>
+    )
   }
 
-  return (
-    <div className="dashboard-container">
-      <h1 className="dashboard-top-text">
-        {
-          user.entries > 0
-            ? `Welcome back, ${user.firstName} :)`
-            : `Welcome ${user.firstName} :)`
-        }
-      </h1>
-      <h1 className="dashboard-top-text-info">
-        {
-          user.entries > 0
-            ? `You've completed ${user.entries} mindfulness entries so far. Keep up the good work!`
-            : ``
-        }
-      </h1>
+  if (link.dest === 'apps') {
+    return (
+      <Route exact path="/dashboard">
+        <Redirect to="/apps" />
+      </Route>
+    )
+  }
 
-      <div className="body">
-        {
-          infoState.open
-            ? <div className="info-container">   
-              <span className="dashboard-header">Click any of the questions in black to learn more</span>        
-              <span className="dashboard-text">
-                <a 
-                  href="https://www.mindful.org/meditation/mindfulness-getting-started/" 
-                  target="_blank" rel="noreferrer">
-                    What is mindfulness?
-                </a>
-              </span>
-              
-              <span className="dashboard-text">
-                <a href="https://positivepsychology.com/benefits-of-mindfulness/" target="_blank" rel="noreferrer">What are all the benefits of mindfulness?</a>
-              </span>
-              <span className="dashboard-text">
-                <a href="https://greatergood.berkeley.edu/article/item/five_ways_mindfulness_meditation_is_good_for_your_health" target="_blank" rel="noreferrer">
-                  More research-based benefits of mindfulness
-                </a>
-              </span>
+  if (link.dest === 'timer') {
+    return (
+      <Route exact path="/dashboard">
+        <Redirect to="/timer" />
+      </Route>
+    )
+  }
 
-              <span className="dashboard-text">
-                <a href="https://www.helpguide.org/harvard/benefits-of-mindfulness.htm#:~:text=Mindfulness%20improves%20physical%20health.&text=Mindfulness%20can%3A%20help%20relieve%20stress,sleep%2C%20and%20alleviate%20gastrointestinal%20difficulties."
-                  target="_blank" rel="noreferrer">
-                    A more thorough explanation and guide to mindfulness: its benefits, techniques, and exercises
-                </a>
-              </span>
+  /*
+  <div className="body">
+        <div className="links-container">
+          <img src={knowledgeImg} alt="Icon of a lightbulb" id="light-icon" />
+          <Link to="/info">
+            <p className="dashboard-text-link">Learn More</p>
+          </Link>
 
-              
-              <span className="dashboard-text">Why meditate?</span>
-              <span className="dashboard-text">
-                Basically, it's the same reason someone exercises or follows a healthy diet.
-                Instead of getting physically stronger or feeling healthier,
-                you gain more control and awareness over your own life. Over time, you become more peaceful,
-                regardless of what is going on around you and in your body. Like anything worthwhile and long-lasting,
-                it may take a bit of time for you to initially see results.
-                But all it takes for you to achieve true peace is to sit quietly for however much time you can dedicate in a given day.
-                Who wouldn't want that?
-              </span>
-
-              <button className="info-btn" onClick={hideInfo}>Hide Info</button>
-            </div>
-            : <div className="info-btn-container">
-              <button className="info-btn" onClick={showInfo}>Show info</button>
-            </div>
-        }
-
-        <div className="links-container" style={dashboardStyles}>
-          <span className="dashboard-header">Guided Meditation Links</span>
           <img src={videoImg} alt="Video icon" id="video-icon" />
           <Link to="/videos">
             <p className="dashboard-text-link">
@@ -125,13 +87,52 @@ const Dashboard = () => {
             </p>
           </Link>
 
-          <span className="dashboard-header">Already meditated? Answer a question to...</span>
           <img src={meditateImg} alt="Icon of someone meditating" id="meditate-icon" />
           <Link to="/entry">
             <p className="dashboard-text-link">
-              Boost your Mindfulness
+              Boost your Personal Mindfulness
             </p>
           </Link>
+        </div>
+      </div>
+  */
+
+  return (
+    <div className="dashboard-container">
+      <h1 className="dashboard-top-text">
+        {
+          user.entries > 0
+            ? `Welcome back, ${user.firstName} :)`
+            : `Welcome ${user.firstName} :)`
+        }
+      </h1>
+      <h1 className="dashboard-top-text-info">
+        {
+          user.entries > 0
+            ? `You've completed ${user.entries} mindfulness entries so far. Keep up the good work!`
+            : ``
+        }
+      </h1>
+
+      <div className="body">
+        <div className="body-icon-link" id="body-info-link">
+          <img src={infoImg} alt="Icon of lightbulb" id="info-icon" onClick={() => setDest('info')} />
+        </div>
+
+        <div className="body-icon-link" id="body-videos-link">
+          <img src={videoImg} alt="Icon of video play button" id="video-icon" onClick={() => setDest('videos')} />
+        </div>
+
+        <div className="body-icon-link" id="body-apps-link">
+          <img src={appImg} alt="Icon of mobile app" id="app-icon" onClick={() => setDest('apps')} />
+        </div>
+
+        <div className="body-icon-link" id="body-timer-link">
+          <img src={timerImg} alt="Icon of timer" id="timer-icon" onClick={() => setDest('timer')} />
+        </div>
+
+        <div className="body-icon-link" id="body-entry-link">
+          <img src={entryImg} alt="Icon of person meditating" id="entry-icon" onClick={() => setDest('entry')} />
         </div>
       </div>
     </div>

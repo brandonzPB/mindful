@@ -48,7 +48,22 @@ html {
   height: 100vh;
   margin: 0 auto;
   font-family: 'Montserrat', sans-serif;
-  /* overflow: hidden; */
+  overflow: hidden;
+}
+
+.logout-btn-container {}
+
+#logout-btn {
+  font-size: 1.5rem;
+  border: none;
+  background-color: rgba(233, 233, 233, 0.6);
+  position: absolute;
+  right: 25px;
+  top: 25px;
+}
+
+#logout-btn:hover {
+  background-color: rgba(233, 233, 233, 0.95);
 }
 
 /* WELCOME */
@@ -98,6 +113,18 @@ html {
 
 .reject-btn {}
 
+/* INFO */
+
+.info-container {
+  margin: 0 auto;
+  height: auto;
+  width: 47%;
+  padding: 5px;
+  background-color:  rgba(195,178,153, 0.7);
+  border-radius: 5px;
+  font-size: 1.2rem;
+}
+
 /* DASHBOARD */
 
 .dashboard-container {
@@ -125,51 +152,15 @@ html {
 
 .body {
   margin: 20px auto;
-  display: flex;
-  flex: 1;
-  flex-wrap: nowrap;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-}
-
-.info-container {
-  margin: 0 auto;
-  height: auto;
-  width: 47%;
-  padding: 5px;
-  background-color:  rgba(195,178,153, 0.7);
-  border-radius: 5px;
-  font-size: 1.2rem;
-}
-
-.info-btn {
-  font-size: 1.25rem;
-  display: block;
-  text-align: center;
-  margin: 0 auto;
-  border: none;
-  box-shadow: 0 0 3px black;
-  background-color: rgb(248,244,232);
-  border-radius: 3px;
-}
-
-.body a,
-.body a:link,
-.body a:visited {
-  text-decoration: none;
-  color: black;
-}
-
-.body a:hover {
-  color: rgb(88, 88, 88);
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 50%;
+  width: 850px;
+  height: 850px;
 }
 
 .links-container {
   margin: 0 auto;
   padding: 5px;
-  background-color: rgba(195,178,153, 0.7);
-  border-radius: 5px;
 }
 
 .dashboard-header {
@@ -186,28 +177,78 @@ html {
   font-size: 1.4rem;
 }
 
-#timer-icon {
-  width: 14%;
+#video-icon {
+  width: 60%;
   height: auto;
   display: block;
+  transition: transform 0.2s;
 }
 
-#video-icon {
-  width: 11%;
-  height: auto;
-  display: block;
+#video-icon:hover {
+  transform: scale(1.5);
+}
+
+#body-videos-link {
+  position: absolute;
+
 }
 
 #app-icon {
-  width: 14%;
+  width: 48%;
   height: auto;
   display: block;
+  transition: transform 0.2s;
 }
 
-#meditate-icon {
-  width: 14%;
+#app-icon:hover {
+  transform: scale(1.5);
+}
+
+#body-apps-link {}
+
+#entry-icon {
+  width: 38%;
   height: auto;
   display: block;
+  transition: transform 0.2s;
+}
+
+#entry-icon:hover {
+  transform: scale(1.5);
+}
+
+#body-entry-link {}
+
+#timer-icon {
+  width: 65%;
+  height: auto;
+  display: block;
+  transition: transform 0.2s;
+}
+
+#timer-icon:hover {
+  transform: scale(1.5);
+}
+
+#body-timer-link {
+}
+
+#info-icon {
+  width: 20%;
+  height: auto;
+  display: block;
+  transition: transform 0.2s;
+}
+
+#info-icon:hover {
+  transform: scale(1.5);
+}
+
+#body-info-link {
+}
+
+.body-icon-link {
+  cursor: pointer;
 }
 
 /* REC VIDEOS */

@@ -1,4 +1,4 @@
-import React, { useReducer, createContext, useEffect } from 'react';
+import React, { useState, useReducer, createContext, useEffect } from 'react';
 import userReducer from '../reducers/userReducer';
 import userService from '../services/userService';
 
@@ -17,6 +17,15 @@ const UserContextProvider = (props) => {
   // }, [user]);
 
   const [user, dispatch] = useReducer(userReducer, {});
+
+  const [link, setLink] = useState({ dest: '' });
+
+  const setDest = req => {
+    setLink({
+      ...link,
+      dest: req
+    });
+  }
 
   const login = user => {
     userService.login(user)
@@ -57,7 +66,7 @@ const UserContextProvider = (props) => {
   }
 
   return (
-    <UserContext.Provider value={{ user, dispatch, login, updateEntries, logout }}>
+    <UserContext.Provider value={{ user, dispatch, link, setLink, setDest, login, updateEntries, logout }}>
       {props.children}
     </UserContext.Provider>
   )
