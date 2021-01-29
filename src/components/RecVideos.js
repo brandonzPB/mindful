@@ -20,6 +20,10 @@ const RecVideos = () => {
         <p>Boost Mindfulness</p>
       </Link>
 
+      <Link to="/dashboard">
+        <p>Return to Dashboard</p>
+      </Link>
+
       <div className="videos">
         <div className="video-container">
           <span className="video-text">10 Minute Guided Meditation for Beginners</span>

@@ -1,5 +1,5 @@
 import React, { useState, useContext } from 'react';
-import { Route, Redirect } from 'react-router-dom';
+import { Link, Route, Redirect } from 'react-router-dom';
 import { UserContext } from '../contexts/UserContext';
 import Entry from './Entry';
 import Modal from './Modal';
@@ -75,6 +75,9 @@ const EntryForm = () => {
             <Redirect to="/dashboard" />
           </Route>
           : <div className="form-container">
+            <Link to="/dashboard">
+              <p>Return to Dashboard</p>
+            </Link>
             <form onSubmit={handleSubmit} className="entry-form">
               <Entry />
               <input 

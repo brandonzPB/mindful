@@ -14,7 +14,11 @@ const Timer = () => {
   }
 
   return (
-    <div className="timer-container"></div>
+    <div className="timer-container">
+      <Link to="/dashboard">
+        <p>Return to Dashboard</p>
+      </Link>
+    </div>
   );
 }
 

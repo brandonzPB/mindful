@@ -48,7 +48,7 @@ html {
   height: 100vh;
   margin: 0 auto;
   font-family: 'Montserrat', sans-serif;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 
 /* WELCOME */
@@ -104,11 +104,11 @@ html {
   margin: 40px auto 15px auto;
   display: flex;
   flex: 1;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 80%;
+  width: 85%;
   height: auto; 
   color: rgb(248,244,232);
 }
@@ -123,27 +123,92 @@ html {
   text-align: center;
 }
 
+.body {
+  margin: 20px auto;
+  display: flex;
+  flex: 1;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
 .info-container {
   margin: 0 auto;
-  display: block;
-  width: 100%;
   height: auto;
-  border: 2px solid black;
+  width: 47%;
+  padding: 5px;
+  background-color:  rgba(195,178,153, 0.7);
+  border-radius: 5px;
+  font-size: 1.2rem;
 }
 
 .info-btn {
   font-size: 1.25rem;
+  display: block;
+  text-align: center;
+  margin: 0 auto;
+  border: none;
+  box-shadow: 0 0 3px black;
+  background-color: rgb(248,244,232);
+  border-radius: 3px;
 }
 
-.info-container a,
-.info-container a:link,
-.info-container a:visited {}
+.body a,
+.body a:link,
+.body a:visited {
+  text-decoration: none;
+  color: black;
+}
 
-.dashboard-header {}
+.body a:hover {
+  color: rgb(88, 88, 88);
+}
 
-.dashboard-text {}
+.links-container {
+  margin: 0 auto;
+  padding: 5px;
+  background-color: rgba(195,178,153, 0.7);
+  border-radius: 5px;
+}
 
-.dashboard-text-link {}
+.dashboard-header {
+  font-size: 1.8rem;
+}
+
+.dashboard-text {
+  display: block;
+  font-size: 1.4rem;
+}
+
+.dashboard-text-link {
+  display: block;
+  font-size: 1.4rem;
+}
+
+#timer-icon {
+  width: 14%;
+  height: auto;
+  display: block;
+}
+
+#video-icon {
+  width: 11%;
+  height: auto;
+  display: block;
+}
+
+#app-icon {
+  width: 14%;
+  height: auto;
+  display: block;
+}
+
+#meditate-icon {
+  width: 14%;
+  height: auto;
+  display: block;
+}
 
 /* REC VIDEOS */
 

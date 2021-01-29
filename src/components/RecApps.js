@@ -27,6 +27,9 @@ const RecApps = () => {
         <p>Boost Mindfulness</p>
       </Link>
 
+      <Link to="/dashboard">
+        <p>Return to Dashboard</p>
+      </Link>
 
       <ul className="app-list">
         <li className="app-list-item">
