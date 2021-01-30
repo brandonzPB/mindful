@@ -116,23 +116,23 @@ const Dashboard = () => {
 
       <div className="body">
         <div className="body-icon-link" id="body-info-link">
-          <img src={infoImg} alt="Icon of lightbulb" id="info-icon" onClick={() => setDest('info')} />
+          <img src={infoImg} alt="Icon of lightbulb" id="info-icon" className="icon" onClick={() => setDest('info')} />
         </div>
 
         <div className="body-icon-link" id="body-videos-link">
-          <img src={videoImg} alt="Icon of video play button" id="video-icon" onClick={() => setDest('videos')} />
+          <img src={videoImg} alt="Icon of video play button" id="video-icon" className="icon" onClick={() => setDest('videos')} />
         </div>
 
         <div className="body-icon-link" id="body-apps-link">
-          <img src={appImg} alt="Icon of mobile app" id="app-icon" onClick={() => setDest('apps')} />
+          <img src={appImg} alt="Icon of mobile app" id="app-icon" className="icon" onClick={() => setDest('apps')} />
         </div>
 
         <div className="body-icon-link" id="body-timer-link">
-          <img src={timerImg} alt="Icon of timer" id="timer-icon" onClick={() => setDest('timer')} />
+          <img src={timerImg} alt="Icon of timer" id="timer-icon" className="icon" onClick={() => setDest('timer')} />
         </div>
 
         <div className="body-icon-link" id="body-entry-link">
-          <img src={entryImg} alt="Icon of person meditating" id="entry-icon" onClick={() => setDest('entry')} />
+          <img src={entryImg} alt="Icon of person meditating" id="entry-icon" className="icon" onClick={() => setDest('entry')} />
         </div>
       </div>
     </div>

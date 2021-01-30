@@ -48,7 +48,6 @@ html {
   height: 100vh;
   margin: 0 auto;
   font-family: 'Montserrat', sans-serif;
-  overflow: hidden;
 }
 
 .logout-btn-container {}
@@ -178,7 +177,7 @@ html {
 }
 
 #video-icon {
-  width: 60%;
+  width: 25%;
   height: auto;
   display: block;
   transition: transform 0.2s;
@@ -189,12 +188,13 @@ html {
 }
 
 #body-videos-link {
-  position: absolute;
-
+  position: relative;
+  left: 322px;
+  top: -110px;
 }
 
 #app-icon {
-  width: 48%;
+  width: 24%;
   height: auto;
   display: block;
   transition: transform 0.2s;
@@ -204,10 +204,14 @@ html {
   transform: scale(1.5);
 }
 
-#body-apps-link {}
+#body-apps-link {
+  position: relative;
+  left: 550px;
+  top: 520px;
+}
 
 #entry-icon {
-  width: 38%;
+  width: 23%;
   height: auto;
   display: block;
   transition: transform 0.2s;
@@ -217,10 +221,14 @@ html {
   transform: scale(1.5);
 }
 
-#body-entry-link {}
+#body-entry-link {
+  position: relative;
+  left: 1180px;
+  top: 520px;
+}
 
 #timer-icon {
-  width: 65%;
+  width: 38%;
   height: auto;
   display: block;
   transition: transform 0.2s;
@@ -231,23 +239,29 @@ html {
 }
 
 #body-timer-link {
+  position: relative;
+  left: 680px;
+  top: 830px;
 }
 
 #info-icon {
-  width: 20%;
+  width: 19%;
   height: auto;
   display: block;
   transition: transform 0.2s;
 }
 
-#info-icon:hover {
+.body-info-link img:hover {
   transform: scale(1.5);
 }
 
 #body-info-link {
+  position: relative;
+  left: 1070px;
+  top: 850px;
 }
 
-.body-icon-link {
+.icon {
   cursor: pointer;
 }
 
