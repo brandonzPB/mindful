@@ -10,12 +10,36 @@ import infoImg from '../images/knowledge.jpeg';
 const Dashboard = () => {
   const { user, link, setDest } = useContext(UserContext);
 
+  const [title, setTitle] = useState({ ref: '' });
+
   if (!user.accessToken) {
     return (
       <Route exact path="/dashboard">
         <Redirect to="/" />
       </Route>
     )
+  }  
+
+  const handleMouseOver = event => {
+    const eventClass = event.target.className;
+    const whiteSpaceIndex = eventClass.indexOf(' ');
+
+    let targetClass = '';
+    for (let i = whiteSpaceIndex + 1; i < eventClass.length; i++) {
+      targetClass += eventClass[i];
+    }
+
+    setTitle({
+      ...title,
+      ref: targetClass
+    });
+  }
+
+  const handleMouseOut = event => {
+    setTitle({
+      ...title,
+      ref: ''
+    });
   }
 
   if (link.dest === 'info') {
@@ -58,45 +82,6 @@ const Dashboard = () => {
     )
   }
 
-  /*
-  <div className="body">
-        <div className="links-container">
-          <img src={knowledgeImg} alt="Icon of a lightbulb" id="light-icon" />
-          <Link to="/info">
-            <p className="dashboard-text-link">Learn More</p>
-          </Link>
-
-          <img src={videoImg} alt="Video icon" id="video-icon" />
-          <Link to="/videos">
-            <p className="dashboard-text-link">
-              Guided Meditation Videos
-            </p>
-          </Link>
-
-          <img src={appImg} alt="App icon" id="app-icon" />
-          <Link to="/apps">
-            <p className="dashboard-text-link">
-              Guided Meditation Apps
-            </p>
-          </Link>
-
-          <img src={timerImg} alt="Timer icon" id="timer-icon" />
-          <Link to="/timer">
-            <p className="dashboard-text-link">
-              Meditation Timer
-            </p>
-          </Link>
-
-          <img src={meditateImg} alt="Icon of someone meditating" id="meditate-icon" />
-          <Link to="/entry">
-            <p className="dashboard-text-link">
-              Boost your Personal Mindfulness
-            </p>
-          </Link>
-        </div>
-      </div>
-  */
-
   return (
     <div className="dashboard-container">
       <h1 className="dashboard-top-text">
@@ -116,24 +101,55 @@ const Dashboard = () => {
 
       <div className="body">
         <div className="body-icon-link" id="body-info-link">
-          <img src={infoImg} alt="Icon of lightbulb" id="info-icon" className="icon" onClick={() => setDest('info')} />
+          <img 
+            src={infoImg} alt="Icon of lightbulb" id="info-icon" className="icon info" 
+            onClick={() => setDest('info')} 
+            onMouseOver={handleMouseOver} 
+            onMouseOut={handleMouseOut} />
         </div>
 
         <div className="body-icon-link" id="body-videos-link">
-          <img src={videoImg} alt="Icon of video play button" id="video-icon" className="icon" onClick={() => setDest('videos')} />
+          <img 
+            src={videoImg} alt="Icon of video play button" id="video-icon" className="icon video" 
+            onClick={() => setDest('videos')} 
+            onMouseOver={handleMouseOver} 
+            onMouseOut={handleMouseOut} />
         </div>
 
         <div className="body-icon-link" id="body-apps-link">
-          <img src={appImg} alt="Icon of mobile app" id="app-icon" className="icon" onClick={() => setDest('apps')} />
+          <img 
+            src={appImg} alt="Icon of mobile app" id="app-icon" className="icon app" 
+            onClick={() => setDest('apps')} 
+            onMouseOver={handleMouseOver} 
+            onMouseOut={handleMouseOut} />
         </div>
 
         <div className="body-icon-link" id="body-timer-link">
-          <img src={timerImg} alt="Icon of timer" id="timer-icon" className="icon" onClick={() => setDest('timer')} />
+          <img 
+            src={timerImg} alt="Icon of timer" id="timer-icon" className="icon timer" 
+            onClick={() => setDest('timer')} 
+            onMouseOver={handleMouseOver} 
+            onMouseOut={handleMouseOut} />
         </div>
 
         <div className="body-icon-link" id="body-entry-link">
-          <img src={entryImg} alt="Icon of person meditating" id="entry-icon" className="icon" onClick={() => setDest('entry')} />
+          <img 
+            src={entryImg} alt="Icon of person meditating" id="entry-icon" className="icon entry" 
+            onClick={() => setDest('entry')} 
+            onMouseOver={handleMouseOver} 
+            onMouseOut={handleMouseOut} />
         </div>
+      </div>
+      <div className="app-text-container">
+        <span className="app-text">
+          {
+            title.ref === 'video' ? 'Guided Meditation Videos'
+              : title.ref === 'app' ? 'Meditation Apps'
+              : title.ref === 'timer' ? 'Meditation Timer'
+              : title.ref === 'entry' ? 'Mindfulness Questions'
+              : title.ref === 'info' ? 'Mindfulness Info' : ''
+          }
+        </span>
       </div>
     </div>
   );
