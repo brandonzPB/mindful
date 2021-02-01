@@ -1,22 +1,28 @@
 import React, { useState, useContext } from 'react';
-import { Link, Route, Redirect } from 'react-router-dom';
+import { Route, Redirect } from 'react-router-dom';
 import { UserContext } from '../contexts/UserContext';
 import Entry from './Entry';
 import Modal from './Modal';
 
 const EntryForm = () => {
-  const { user, dispatch, updateEntries } = useContext(UserContext);
+  const { user, dispatch, updateEntries, link, setDest } = useContext(UserContext);
 
   const [entry, setEntry] = useState({ text: '' });
 
   const [modalState, setModalState] = useState({ show: false });
 
-  const [returnHome, setReturnHome] = useState({ route: false });
-
   if (!user.accessToken) {
     return (
       <Route exact path="/entry">
         <Redirect to="/" />
+      </Route>
+    )
+  }
+
+  if (link.dest === 'dashboard') {
+    return (
+      <Route exact path="/entry">
+        <Redirect to="/dashboard" />
       </Route>
     )
   }
@@ -34,10 +40,7 @@ const EntryForm = () => {
       show: false
     });
 
-    setReturnHome({
-      ...returnHome,
-      route: true
-    });
+    return setDest('dashboard');
   }
 
   const handleChange = event => {
@@ -68,32 +71,25 @@ const EntryForm = () => {
 
   return (
     <div className="entry-container">
+      <div className="btns-container">
+        <button clasName="dest-btns" onClick={() => setDest('dashboard')}>Return to Dashboard</button>
+      </div>
 
-      {
-        returnHome.route
-          ? <Route exact path="/entry">
-            <Redirect to="/dashboard" />
-          </Route>
-          : <div className="form-container">
-            <Link to="/dashboard">
-              <p>Return to Dashboard</p>
-            </Link>
-            <form onSubmit={handleSubmit} className="entry-form">
-              <Entry />
-              <input 
-                className="entry-input"
-                id="entry-input"
-                type="text"
-                value={entry.text}
-                onChange={handleChange}
-              />
-              <button className="submit-btn toggle-button">Complete Entry</button>
-            </form>
+      <div className="form-container">
+        <form onSubmit={handleSubmit} className="entry-form">
+          <Entry />
+          <input 
+            className="entry-input"
+            id="entry-input"
+            type="text"
+            value={entry.text}
+            onChange={handleChange}
+          />
+          <button className="submit-btn toggle-button">Complete Entry</button>
+        </form>
 
-            <Modal modalState={modalState} closeModal={closeModal} />
-          </div>
-      }
-
+        <Modal modalState={modalState} closeModal={closeModal} />
+      </div>
     </div>
   );
 }

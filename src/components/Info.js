@@ -1,16 +1,9 @@
 import React, { useContext, useEffect } from 'react';
-import { Link, Route, Redirect } from 'react-router-dom';
+import { Route, Redirect } from 'react-router-dom';
 import { UserContext } from '../contexts/UserContext';
 
 const Info = () => {
-  const { user, link, setLink } = useContext(UserContext);
-
-  useEffect(() => {
-    setLink({
-      ...link,
-      dest: ''
-    });
-  }, []);
+  const { user, link, setDest } = useContext(UserContext);
 
   if (!user.accessToken) {
     return (
@@ -20,11 +13,19 @@ const Info = () => {
     )
   }
 
+  if (link.dest === 'dashboard') {
+    return (
+      <Route exact path="/info">
+        <Redirect to="/dashboard" />
+      </Route>
+    )
+  }
+
   return (
     <div className="info-container">
-      <Link to="/dashboard">
-        <p>Return to Dashboard</p>
-      </Link>
+      <div className="btns-container">
+        <button className="dest-btns" onClick={() => setDest('dashboard')}>Return to Dashboard</button>
+      </div>
 
       <div className="info-container">   
         <span className="dashboard-header">Knowledge is power! Click any of the black links to learn more</span>        

@@ -1,9 +1,9 @@
 import React, { useContext } from 'react';
-import { Link, Route, Redirect } from 'react-router-dom';
+import { Route, Redirect } from 'react-router-dom';
 import { UserContext } from '../contexts/UserContext';
 
 const Timer = () => {
-  const { user } = useContext(UserContext);
+  const { user, link, setDest } = useContext(UserContext);
 
   if (!user.accessToken) {
     return (
@@ -13,11 +13,28 @@ const Timer = () => {
     )
   }
 
+  if (link.dest === 'dashboard') {
+    return (
+      <Route exact path="/timer">
+        <Redirect to="/dashboard" />
+      </Route>
+    )
+  }
+
+  if (link.dest === 'entry') {
+    return (
+      <Route exact path="/timer">
+        <Redirect to="/entry" />
+      </Route>
+    )
+  }
+
   return (
     <div className="timer-container">
-      <Link to="/dashboard">
-        <p>Return to Dashboard</p>
-      </Link>
+      <div className="btns-container">
+        <button className="dest-btns" onClick={() => setDest('dashboard')}>Return to Dashboard</button>
+        <button className="dest-btns entry-route-btn" onClick={() => setDest('entry')}>Boost Mindfulness</button>
+      </div>
     </div>
   );
 }

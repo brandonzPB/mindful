@@ -1,6 +1,6 @@
 import React, { useState, useContext } from 'react';
 import { UserContext } from '../contexts/UserContext';
-import { Link, Route, Redirect } from 'react-router-dom';
+import { Route, Redirect } from 'react-router-dom';
 import timerImg from '../images/timer.jpeg';
 import videoImg from '../images/video.jpeg';
 import appImg from '../images/app.jpeg';
@@ -100,14 +100,6 @@ const Dashboard = () => {
       </h1>
 
       <div className="body">
-        <div className="body-icon-link" id="body-info-link">
-          <img 
-            src={infoImg} alt="Icon of lightbulb" id="info-icon" className="icon info" 
-            onClick={() => setDest('info')} 
-            onMouseOver={handleMouseOver} 
-            onMouseOut={handleMouseOut} />
-        </div>
-
         <div className="body-icon-link" id="body-videos-link">
           <img 
             src={videoImg} alt="Icon of video play button" id="video-icon" className="icon video" 
@@ -124,6 +116,14 @@ const Dashboard = () => {
             onMouseOut={handleMouseOut} />
         </div>
 
+        <div className="body-icon-link" id="body-entry-link">
+          <img 
+            src={entryImg} alt="Icon of person meditating" id="entry-icon" className="icon entry" 
+            onClick={() => setDest('entry')} 
+            onMouseOver={handleMouseOver} 
+            onMouseOut={handleMouseOut} />
+        </div>
+
         <div className="body-icon-link" id="body-timer-link">
           <img 
             src={timerImg} alt="Icon of timer" id="timer-icon" className="icon timer" 
@@ -132,10 +132,10 @@ const Dashboard = () => {
             onMouseOut={handleMouseOut} />
         </div>
 
-        <div className="body-icon-link" id="body-entry-link">
+        <div className="body-icon-link" id="body-info-link">
           <img 
-            src={entryImg} alt="Icon of person meditating" id="entry-icon" className="icon entry" 
-            onClick={() => setDest('entry')} 
+            src={infoImg} alt="Icon of lightbulb" id="info-icon" className="icon info" 
+            onClick={() => setDest('info')} 
             onMouseOver={handleMouseOver} 
             onMouseOut={handleMouseOut} />
         </div>

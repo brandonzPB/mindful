@@ -16,13 +16,6 @@ code {
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@700&display=swap');
 
-/*
-rgb(83,95,45);
-rgb(217,196,179);
-rgb(161,177,130);
-rgb(127,93,83);
-*/
-
 .test {
   color: rgb(83,95,45);
   color: rgb(217,196,179);
@@ -181,16 +174,13 @@ html {
   height: auto;
   display: block;
   transition: transform 0.2s;
+  position: relative;
+  left: 315px;
+  top: 30px;
 }
 
 #video-icon:hover {
   transform: scale(1.5);
-}
-
-#body-videos-link {
-  position: relative;
-  left: 322px;
-  top: -180px;
 }
 
 #app-icon {
@@ -198,16 +188,13 @@ html {
   height: auto;
   display: block;
   transition: transform 0.2s;
+  position: relative;
+  left: 10px;
+  top: 50px;
 }
 
 #app-icon:hover {
   transform: scale(1.5);
-}
-
-#body-apps-link {
-  position: relative;
-  left: 5px;
-  top: -165px;
 }
 
 #entry-icon {
@@ -215,16 +202,13 @@ html {
   height: auto;
   display: block;
   transition: transform 0.2s;
+  position: relative;
+  left: 610px;
+  top: -160px;
 }
 
 #entry-icon:hover {
   transform: scale(1.5);
-}
-
-#body-entry-link {
-  position: relative;
-  left: 610px;
-  top: -630px;
 }
 
 #timer-icon {
@@ -232,16 +216,13 @@ html {
   height: auto;
   display: block;
   transition: transform 0.2s;
+  position: relative;
+  left: 130px;
+  top: -90px;
 }
 
 #timer-icon:hover {
   transform: scale(1.5);
-}
-
-#body-timer-link {
-  position: relative;
-  left: 130px;
-  top: -70px;
 }
 
 #info-icon {
@@ -249,15 +230,13 @@ html {
   height: auto;
   display: block;
   transition: transform 0.2s;
-}
-.body-icon-link img:hover {
-  transform: scale(1.5);
+  position: relative;
+  left: 500px;
+  top: -320px;
 }
 
-#body-info-link {
-  position: relative;
-  left: 510px;
-  top: 570px
+#info-icon:hover {
+  transform: scale(1.5);
 }
 
 .icon {
@@ -278,11 +257,60 @@ html {
 
 /* REC VIDEOS */
 
-.rec-videos-container {}
+.rec-videos-container {
+  margin: 50px auto;
+  width: 85%;
+  height: auto;
+  display: flex;
+  flex: 1;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
 
-.video-text {}
+.video-header-link {
+  display: block;
+}
 
-.video {}
+.dest-btns {
+  background-color: rgb(119, 84, 74);
+  color: rgba(255, 255, 255, 1);
+  font-size: 1.5rem;
+  width: 150px;
+  height: auto;
+  border: none;
+  border-radius: 3px;
+  box-shadow: 0 0 3px black;
+  margin: 30px 100px;
+}
+
+.dest-btns:hover {
+  background-color: rgb(150, 120, 111);
+}
+
+.videos-header {
+  color: rgba(255, 255, 255, 1);
+  font-size: 2rem;
+}
+
+.video-container {
+  margin: 20px auto;
+  display: block;
+}
+
+.video-text {
+  display: block;
+  font-size: 1.75rem;
+  color: rgba(255, 255, 255, 1);
+  margin: 50px auto 0 auto;
+}
+
+.iframe {
+  display: block;
+  margin: 10px auto 70px auto;
+}
 
 /* REC APPS */
 

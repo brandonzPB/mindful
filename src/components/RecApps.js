@@ -1,14 +1,30 @@
 import React, { useContext } from 'react';
-import { Link, Route, Redirect } from 'react-router-dom';
+import { Route, Redirect } from 'react-router-dom';
 import { UserContext } from '../contexts/UserContext';
 
 const RecApps = () => {
-  const { user } = useContext(UserContext);
+  const { user, link, setDest } = useContext(UserContext);
 
   if (!user.accessToken) {
     return (
       <Route exact path="/apps">
         <Redirect to="/" />
+      </Route>
+    )
+  }
+
+  if (link.dest === 'dashboard') {
+    return (
+      <Route exact path="/apps">
+        <Redirect to="/dashboard" />
+      </Route>
+    )
+  }
+
+  if (link.dest === 'entry') {
+    return (
+      <Route exact path="/apps">
+        <Redirect to="/entry" />
       </Route>
     )
   }
@@ -23,13 +39,10 @@ const RecApps = () => {
         by answering a short question
       </span>
       <span className="rec-text">Click the 'Boost Mindfulness' button below to answer a question when you're ready</span>
-      <Link to="/entry">
-        <p>Boost Mindfulness</p>
-      </Link>
-
-      <Link to="/dashboard">
-        <p>Return to Dashboard</p>
-      </Link>
+      <div className="btns-container">
+        <button className="dest-btns" onClick={() => setDest('dashboard')}>Return to Dashboard</button>
+        <button className="dest-btns entry-route-btn" onClick={() => setDest('entry')}>Boost Mindfulness</button>
+      </div>
 
       <ul className="app-list">
         <li className="app-list-item">
