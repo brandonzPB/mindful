@@ -40,7 +40,7 @@ html {
   width: 100vw;
   height: 100vh;
   margin: 0 auto;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Raleway', sans-serif;
 }
 
 .logout-btn-container {}
@@ -56,6 +56,24 @@ html {
 
 #logout-btn:hover {
   background-color: rgba(233, 233, 233, 0.95);
+}
+
+.dest-btns {
+  background-color: rgb(119, 84, 74);
+  color: rgba(255, 255, 255, 1);
+  font-size: 1.5rem;
+  width: 160px;
+  height: auto;
+  border: none;
+  border-radius: 3px;
+  box-shadow: 0 0 3px black;
+  margin: 30px 100px;
+  font-family: 'Montserrat', sans-serif;
+  padding: 10px;
+}
+
+.dest-btns:hover {
+  background-color: rgb(150, 120, 111);
 }
 
 /* WELCOME */
@@ -107,14 +125,52 @@ html {
 
 /* INFO */
 
+.info-parent-container {
+  margin: 50px auto;
+  width: 85%;
+  display: flex;
+  flex: 1;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
 .info-container {
   margin: 0 auto;
   height: auto;
-  width: 47%;
+  width: 60%;
   padding: 5px;
   background-color:  rgba(195,178,153, 0.7);
   border-radius: 5px;
   font-size: 1.2rem;
+}
+
+.info-container a,
+.info-container a:link,
+.info-container a:visited {
+  color: black;
+  text-decoration: none;
+  font-size: 1.7rem;
+}
+
+.info-container a:hover {
+  color: white;
+}
+
+.info-header {
+  margin: 30px auto 20px auto;
+  display: block;
+  color: white;
+  font-size: 2rem;
+}
+
+.info-text {
+  display: block;
+  font-size: 1.7rem;
+  line-height: 2rem;
+  color: white;
 }
 
 /* DASHBOARD */
@@ -274,22 +330,6 @@ html {
   display: block;
 }
 
-.dest-btns {
-  background-color: rgb(119, 84, 74);
-  color: rgba(255, 255, 255, 1);
-  font-size: 1.5rem;
-  width: 150px;
-  height: auto;
-  border: none;
-  border-radius: 3px;
-  box-shadow: 0 0 3px black;
-  margin: 30px 100px;
-}
-
-.dest-btns:hover {
-  background-color: rgb(150, 120, 111);
-}
-
 .videos-header {
   color: rgba(255, 255, 255, 1);
   font-size: 2rem;
@@ -314,11 +354,63 @@ html {
 
 /* REC APPS */
 
-.rec-app-container {}
+.rec-app-container {
+  margin: 50px auto;
+  display: flex;
+  flex: 1;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
 
-.rec-text {}
+.rec-text {
+  color: rgba(255, 255, 255, 1);
+  font-size: 1.75rem;
+  line-height: 3rem;
+}
 
+.app-list {
+  margin: 70px auto;
+}
 
+.app-list-item {
+  margin: 120px auto;
+}
+
+.logo-img {
+  transition: transform 0.2s;
+}
+
+.logo-img:hover {
+  transform: scale(1.2);
+}
+
+.insight-img {
+  width: 50%;
+  height: auto;
+}
+
+.headspace-img {
+  width: 50%;
+  height: auto;
+}
+
+.stop-img {
+  width: 50%;
+  height: auto;
+}
+
+.buddhify-img {
+  width: 50%;
+  height: auto;
+}
+
+.ten-percent-img {
+  width: 50%;
+  height: auto;
+}
 
 /* ENTRY PAGE */
 
@@ -331,3 +423,24 @@ html {
 .entry-input {}
 
 .submit-btn {}
+
+/* TIMER */
+
+.timer-container {
+  margin: 50px auto;
+  display: flex;
+  flex: 1;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.timer-form {
+  margin: 0 auto;
+}
+
+.timer-input {
+  
+}
