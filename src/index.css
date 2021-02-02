@@ -438,9 +438,40 @@ html {
 }
 
 .timer-form {
-  margin: 0 auto;
+  margin: 50px auto;
 }
 
 .timer-input {
-  
+  background: none;
+  border: none;
+  font-size: 5.75rem;
+  color: white;
+  width: 100px;
+  text-align: center;
+}
+
+.start-btn {
+  display: block;
+  background-color:  rgb(248,244,232);
+  border: none;
+  box-shadow: 0 0 3px black;
+  color: black;
+  font-size: 2rem;
+  width: 170px;
+  height: auto;
+  padding: 10px;
+  margin: 20px auto;
+  text-align: center;
+}
+
+.pause-btn {
+  margin: 0 20px;
+  border: none;
+  box-shadow: 0 0 3px black;
+}
+
+.reset-btn {}
+
+.timer-char {
+  font-size: 1.25rem;
 }

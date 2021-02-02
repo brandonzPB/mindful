@@ -9,10 +9,44 @@ const Timer = () => {
     seconds: 0,
     minutes: 0,
     hours: 0,
-    interval: 0,
+    countdown: false,
   });
 
   useEffect(() => {
+    if (!timer.countdown) return;
+
+    const meditation = setTimeout(() => {
+      if (timer.seconds === 0) {
+
+        if (timer.minutes === 0) {
+
+          if (timer.hours === 0) {
+            alert('Timer is done!');
+          } else {
+            setTimer({
+              ...timer,
+              seconds: 59,
+              minutes: 59,
+              hours: timer.hours - 1
+            });
+          }
+
+        } else {
+          setTimer({
+            ...timer,
+            seconds: 59,
+            minutes: timer.minutes - 1
+          });
+        }
+      } else {
+        setTimer({
+          ...timer,
+          seconds: timer.seconds - 1
+        });
+      }
+    }, 1000);
+
+    return () => clearTimeout(meditation);
   }, [timer]);
 
   if (!user.accessToken) {
@@ -39,12 +73,36 @@ const Timer = () => {
     )
   }
 
-  const handleTimer = event => {
+  const handleSubmit = event => {
     event.preventDefault();
+
+    if (timer.seconds > 59) {
+      setTimer({
+        ...timer,
+        seconds: 59
+      });
+    } else if (timer.minutes > 59) {
+      setTimer({
+        ...timer,
+        minutes: 59
+      });
+    } else if (timer.hours > 3) {
+      setTimer({
+        ...timer,
+        hours: 3
+      });
+    }
+
+    setTimer({
+      ...timer,
+      countdown: true
+    });
   }
 
   const handleChange = event => {
     const { name, value } = event.target;
+
+    if (value % 2 != 0 && value % 2 != 1) return;
 
     setTimer({
       ...timer,
@@ -52,8 +110,21 @@ const Timer = () => {
     });
   }
 
-  const changeTextToInput = () => {
+  const pauseTimer = () => {
+    setTimer({
+      ...timer,
+      countdown: false
+    });
+  }
 
+  const resetTimer = () => {
+    setTimer({
+      ...timer,
+      seconds: 0,
+      minutes: 0,
+      hours: 0,
+      countdown: false
+    });
   }
 
   return (
@@ -64,10 +135,9 @@ const Timer = () => {
       </div>
 
       <div className="timer-form">
-        <form onSubmit={handleTimer}>
-          <span className="timer-input-text" onClick={changeTextToInput}>00</span>
+        <form onSubmit={handleSubmit}>
           <input 
-            type="number"
+            type="text"
             name="hours"
             value={timer.hours}
             onChange={handleChange}
@@ -77,7 +147,7 @@ const Timer = () => {
           <span className="timer-char">h</span>
 
           <input 
-            type="number"
+            type="text"
             name="minutes"
             value={timer.minutes}
             onChange={handleChange}
@@ -87,7 +157,7 @@ const Timer = () => {
           <span className="timer-char">m</span>
 
           <input 
-            type="number"
+            type="text"
             name="seconds"
             value={timer.seconds}
             onChange={handleChange}
@@ -96,8 +166,10 @@ const Timer = () => {
           />
           <span className="timer-char">s</span>
 
-          <button className="set-time-btn">Set Timer</button>
+          <button className="start-btn">Start Timer</button>
         </form>
+        <button onClick={pauseTimer} id="pause-btn">Pause Timer</button>
+        <button onClick={resetTimer} id="reset-btn">Reset Timer</button>
       </div>
     </div>
   );
