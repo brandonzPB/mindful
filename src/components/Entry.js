@@ -11,7 +11,7 @@ const Entry = () => {
 
   return (
     <div className="entry-container">
-      <span className="entry-question-text">
+      <span id="entry-question-text">
         {entry.text}
       </span>
     </div>

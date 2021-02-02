@@ -72,18 +72,18 @@ const EntryForm = () => {
   return (
     <div className="entry-container">
       <div className="btns-container">
-        <button clasName="dest-btns dashboard-route-btn" onClick={() => setDest('dashboard')}>Return to Dashboard</button>
+        <button className="dest-btns dashboard-route-btn" onClick={() => setDest('dashboard')}>Return to Dashboard</button>
       </div>
 
       <div className="form-container">
         <form onSubmit={handleSubmit} className="entry-form">
           <Entry />
-          <input 
-            className="entry-input"
-            id="entry-input"
-            type="text"
+          <textarea 
             value={entry.text}
+            id="entry-input"
             onChange={handleChange}
+            rows={10}
+            cols={50}
           />
           <button className="submit-btn toggle-button">Complete Entry</button>
         </form>
