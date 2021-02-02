@@ -34,7 +34,7 @@ const RecVideos = () => {
       <span className="videos-header">Once you have finished your meditation, click 'Boost Mindfulness' below to answer a short question!</span>
 
       <div className="btns-container">
-        <button className="dest-btns" onClick={() => setDest('dashboard')}>Return to Dashboard</button>
+        <button className="dest-btns dashboard-route-btn" onClick={() => setDest('dashboard')}>Return to Dashboard</button>
         <button className="dest-btns entry-route-btn" onClick={() => setDest('entry')}>Boost Mindfulness</button>
       </div>
       

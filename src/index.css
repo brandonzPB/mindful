@@ -59,8 +59,6 @@ html {
 }
 
 .dest-btns {
-  background-color: rgb(119, 84, 74);
-  color: rgba(255, 255, 255, 1);
   font-size: 1.5rem;
   width: 160px;
   height: auto;
@@ -72,8 +70,22 @@ html {
   padding: 10px;
 }
 
-.dest-btns:hover {
+.dashboard-route-btn {
+  background-color: rgb(119, 84, 74);
+  color: rgba(255, 255, 255, 1);
+}
+
+.dashboard-route-btn:hover {
   background-color: rgb(150, 120, 111);
+}
+
+.entry-route-btn {
+  background-color: rgb(111,185,143);
+  color: rgb(248,244,232);
+}
+
+.entry-route-btn:hover {
+  background-color: rgb(87, 167, 122);
 }
 
 /* WELCOME */
@@ -427,7 +439,7 @@ html {
 /* TIMER */
 
 .timer-container {
-  margin: 50px auto;
+  margin: 80px auto;
   display: flex;
   flex: 1;
   flex-wrap: wrap;
@@ -438,40 +450,61 @@ html {
 }
 
 .timer-form {
-  margin: 50px auto;
+  margin: 80px auto;
 }
 
 .timer-input {
   background: none;
   border: none;
-  font-size: 5.75rem;
+  font-size: 7rem;
   color: white;
   width: 100px;
   text-align: center;
 }
 
-.start-btn {
+.timer-char {
+  font-size: 2rem;
+}
+
+#start-btn {
   display: block;
-  background-color:  rgb(248,244,232);
+  background-color: rgb(52,141,223);
   border: none;
   box-shadow: 0 0 3px black;
-  color: black;
+  color: rgb(248,244,232);
   font-size: 2rem;
   width: 170px;
   height: auto;
   padding: 10px;
-  margin: 20px auto;
+  margin: 60px auto;
   text-align: center;
 }
 
-.pause-btn {
+.timer-btns-container {
+  margin: 40px auto;
+  display: block;
+}
+
+#pause-btn {
+  background-color:  rgb(248,244,232);
+  color: black;
   margin: 0 20px;
   border: none;
   box-shadow: 0 0 3px black;
+  font-size: 1.35rem;
+  width: 135px;
+  height: auto;
+  padding: 10px;
 }
 
-.reset-btn {}
-
-.timer-char {
-  font-size: 1.25rem;
+#reset-btn {
+  background-color: rgb(216,43,43);
+  color: white;
+  margin: 0 20px;
+  border: none;
+  box-shadow: 0 0 3px black;
+  font-size: 1.35rem;
+  width: 130px;
+  height: auto;
+  padding: 10px;
 }

@@ -1,6 +1,8 @@
 import React, { useState, useEffect, useContext } from 'react';
 import { Route, Redirect } from 'react-router-dom';
 import { UserContext } from '../contexts/UserContext';
+import chimeSrc from '../audio/chime.mp3';
+const chimeSound = new Audio(chimeSrc);
 
 const Timer = () => {
   const { user, link, setDest } = useContext(UserContext);
@@ -13,6 +15,9 @@ const Timer = () => {
   });
 
   useEffect(() => {
+    chimeSound.load();
+      chimeSound.currentTime = 0;
+
     if (!timer.countdown) return;
 
     const meditation = setTimeout(() => {
@@ -21,7 +26,7 @@ const Timer = () => {
         if (timer.minutes === 0) {
 
           if (timer.hours === 0) {
-            alert('Timer is done!');
+            chimeSound.play();
           } else {
             setTimer({
               ...timer,
@@ -130,7 +135,7 @@ const Timer = () => {
   return (
     <div className="timer-container">
       <div className="btns-container">
-        <button className="dest-btns" onClick={() => setDest('dashboard')}>Return to Dashboard</button>
+        <button className="dest-btns dashboard-route-btn" onClick={() => setDest('dashboard')}>Return to Dashboard</button>
         <button className="dest-btns entry-route-btn" onClick={() => setDest('entry')}>Boost Mindfulness</button>
       </div>
 
@@ -166,10 +171,12 @@ const Timer = () => {
           />
           <span className="timer-char">s</span>
 
-          <button className="start-btn">Start Timer</button>
+          <button id="start-btn">Start Timer</button>
         </form>
-        <button onClick={pauseTimer} id="pause-btn">Pause Timer</button>
-        <button onClick={resetTimer} id="reset-btn">Reset Timer</button>
+        <div className="timer-btns-container">
+          <button onClick={pauseTimer} id="pause-btn">Pause Timer</button>
+          <button onClick={resetTimer} id="reset-btn">Reset Timer</button>
+        </div>
       </div>
     </div>
   );

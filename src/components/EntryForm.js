@@ -72,7 +72,7 @@ const EntryForm = () => {
   return (
     <div className="entry-container">
       <div className="btns-container">
-        <button clasName="dest-btns" onClick={() => setDest('dashboard')}>Return to Dashboard</button>
+        <button clasName="dest-btns dashboard-route-btn" onClick={() => setDest('dashboard')}>Return to Dashboard</button>
       </div>
 
       <div className="form-container">

@@ -40,7 +40,7 @@ const RecApps = () => {
       <span className="rec-text">Click the 'Boost Mindfulness' button below to answer a question when you're ready</span>
       
       <div className="btns-container">
-        <button className="dest-btns" onClick={() => setDest('dashboard')}>Return to Dashboard</button>
+        <button className="dest-btns dashboard-route-btn" onClick={() => setDest('dashboard')}>Return to Dashboard</button>
         <button className="dest-btns entry-route-btn" onClick={() => setDest('entry')}>Boost Mindfulness</button>
       </div>
 

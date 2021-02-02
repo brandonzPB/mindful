@@ -24,7 +24,7 @@ const Info = () => {
   return (
     <div className="info-parent-container">
       <div className="btns-container">
-        <button className="dest-btns" onClick={() => setDest('dashboard')}>Return to Dashboard</button>
+        <button className="dest-btns dashboard-route-btn" onClick={() => setDest('dashboard')}>Return to Dashboard</button>
       </div>
 
       <span className="info-header">Knowledge is power! Click any of the black text below to learn more</span>
