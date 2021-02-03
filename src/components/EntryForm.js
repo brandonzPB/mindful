@@ -7,7 +7,11 @@ import Modal from './Modal';
 const EntryForm = () => {
   const { user, dispatch, updateEntries, link, setDest } = useContext(UserContext);
 
-  const [entry, setEntry] = useState({ text: '' });
+  const [entry, setEntry] = useState({
+    text: '', 
+    set: true, 
+    index: ''
+  });
 
   const [modalState, setModalState] = useState({ show: false });
 
@@ -64,6 +68,11 @@ const EntryForm = () => {
       entries: user.entries + 1,
       text,
     }});
+
+    setEntry({
+      ...entry,
+      completed: true
+    });
     
     // update database info
     updateEntries(count);
@@ -79,7 +88,7 @@ const EntryForm = () => {
 
       <div className="form-container">
         <form onSubmit={handleSubmit} className="entry-form">
-          <Entry />
+          <Entry entry={entry} setEntry={setEntry} />
           <textarea 
             value={entry.text}
             id="entry-input"

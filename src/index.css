@@ -506,12 +506,12 @@ html {
     rgb(111, 124, 68));
   color: rgb(248,244,232);
   width: 550px;
-  height: 620px;
+  height: 690px;
   position: relative;
   top: 60px;
   left: 106px;
   border-radius: 5px;
-  box-shadow: 0 0 130px black;
+  box-shadow: 3px 3px 150px black;
   padding: 20px;
 }
 

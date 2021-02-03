@@ -5,18 +5,16 @@ import userService from '../services/userService';
 export const UserContext = createContext();
 
 const UserContextProvider = (props) => {
-  // const [user, dispatch] = useReducer(userReducer, [], () => {
-  //   const storedUser = localStorage.getItem('my-user');
-  //   return storedUser
-  //     ? JSON.parse(storedUser)
-  //     : {};
-  // });
+  const [user, dispatch] = useReducer(userReducer, [], () => {
+    const storedUser = localStorage.getItem('my-user');
+    return storedUser
+      ? JSON.parse(storedUser)
+      : {};
+  });
 
-  // useEffect(() => {
-  //   localStorage.setItem('my-user', JSON.stringify(user));
-  // }, [user]);
-
-  const [user, dispatch] = useReducer(userReducer, {});
+  useEffect(() => {
+    localStorage.setItem('my-user', JSON.stringify(user));
+  }, [user]);
 
   const [link, setLink] = useState({ dest: '' });
 
@@ -66,7 +64,13 @@ const UserContextProvider = (props) => {
   }
 
   return (
-    <UserContext.Provider value={{ user, dispatch, link, setLink, setDest, login, updateEntries, logout }}>
+    <UserContext.Provider value={{ 
+        user, dispatch, 
+        link, setLink, 
+        setDest, 
+        login, logout,
+        updateEntries, 
+    }}>
       {props.children}
     </UserContext.Provider>
   )

@@ -40,6 +40,7 @@ const Modal = ({ modalState, closeModal }) => {
     <div className="modal-parent-container">
       <div className="modal-container">
         <div className="fb-share-container">
+          <span className="fb-share-text">Thank you for using mindul.io </span>
           <span className="fb-share-text">Enjoy being more mindful? Share your experience with your friends!</span>
           <FacebookShareButton
             url={shareUrl}
