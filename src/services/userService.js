@@ -1,5 +1,5 @@
 import axios from 'axios';
-const baseUrl = 'https://mindfulio.herokuapp.com';
+const baseUrl = '/dashboard/user';
 
 // CHECK IF USER EXISTS
 const check = (userObject) => {

@@ -1,6 +1,5 @@
 import React, { useState, useContext } from 'react';
 import { Route, Redirect } from 'react-router-dom';
-import FacebookLogin from 'react-facebook-login';
 import { UserContext } from '../contexts/UserContext';
 import userService from '../services/userService';
 
@@ -47,6 +46,8 @@ const Welcome = () => {
     login(user);
   }
 
+  const createAccount = () => {}
+
   return (
     <div className="welcome-container">
       {
@@ -56,15 +57,11 @@ const Welcome = () => {
           </Route>
           : <div className="welcome-login-container">
             <span className="welcome-text">welcome to mindful.io</span>
-            <span className="welcome-text-info">The Facebook app that helps you be more at peace in your daily life with a simple, healthy habit</span>
-            <div className="login-btn-container">
-              <FacebookLogin
-                appId="3644277315654948"
-                autoLoad={true}
-                fields="name,email,picture"
-                // onClick={componentClicked}
-                callback={responseFacebook} 
-              />
+            <span className="welcome-text-info">The free website that helps you be more at peace in your daily life with a simple, healthy habit</span>
+            <div className="welcome-user-container">
+              <Login />
+              <span className="login-info">Don't have an account?</span>
+              <button id="create-btn" onClick={createAccount}>Create an Account</button>
             </div>
           </div>
       }
