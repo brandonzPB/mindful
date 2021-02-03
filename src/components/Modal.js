@@ -40,18 +40,18 @@ const Modal = ({ modalState, closeModal }) => {
     <div className="modal-parent-container">
       <div className="modal-container">
         <div className="fb-share-container">
-          <span className="fb-share-text">Enjoyed being more mindful? Tell your friends about your experience!</span>
+          <span className="fb-share-text">Enjoy being more mindful? Share your experience with your friends!</span>
           <FacebookShareButton
             url={shareUrl}
             quote={title}
             className="fb-share-btn"
           >
-            <FacebookIcon size={64} round />
+            <FacebookIcon size={90} round />
           </FacebookShareButton>
         </div>
 
         <div className="save-file-container">
-          <span className="save-file-text">As part of your privacy, we don't collect your responses</span>
+          <span className="save-file-text">As part of your privacy, we don't collect your responses.</span>
           <span className="save-file-text">Click 'Download' below if you want to save your response to view later (only chance!)</span>
           <button onClick={downloadTxt} className="save-file-btn">Download</button>
         </div>

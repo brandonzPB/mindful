@@ -53,18 +53,20 @@ const EntryForm = () => {
   const handleSubmit = event => {
     event.preventDefault();
 
+    if (!entry.text.trim()) return;
+
     const count = user.entries + 1;
 
     const text = { input: entry.text };
     
     // update number of entries completed
-    // dispatch({ type: 'COMPLETE_ENTRY', user: {
-    //   entries: user.entries + 1,
-    //   text,
-    // }});
+    dispatch({ type: 'COMPLETE_ENTRY', user: {
+      entries: user.entries + 1,
+      text,
+    }});
     
     // update database info
-    // updateEntries(count);
+    updateEntries(count);
 
     openModal();
   }
