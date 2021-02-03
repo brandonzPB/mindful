@@ -1,17 +1,33 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { Route, Redirect } from 'react-router-dom';
 import { UserContext } from '../contexts/UserContext';
 import Entry from './Entry';
 import Modal from './Modal';
+import { entries } from '../modules/entries';
 
 const EntryForm = () => {
   const { user, dispatch, updateEntries, link, setDest } = useContext(UserContext);
 
   const [entry, setEntry] = useState({
-    text: '', 
-    set: true, 
-    index: ''
+    text: '',
+    obj: '',
+    selected: false,
   });
+
+  let entryIndex;
+
+  useEffect(() => {
+    if (entry.selected) return;
+
+    entryIndex = user.entries >= 2
+      ? Math.floor(Math.random() * entries.length)
+      : user.entries;
+    
+    setEntry({
+      ...entry,
+      obj: entries[entryIndex]
+    });
+  }, []);
 
   const [modalState, setModalState] = useState({ show: false });
 
@@ -88,7 +104,7 @@ const EntryForm = () => {
 
       <div className="form-container">
         <form onSubmit={handleSubmit} className="entry-form">
-          <Entry entry={entry} setEntry={setEntry} />
+          <Entry entry={entry} />
           <textarea 
             value={entry.text}
             id="entry-input"

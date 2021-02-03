@@ -1,31 +1,10 @@
-import React, { useEffect, useContext } from 'react';
-import { UserContext } from '../contexts/UserContext';
-import { entries } from '../modules/entries';
+import React from 'react';
 
-const Entry = ({ entry, setEntry }) => {
-  const { user } = useContext(UserContext);
-
-  const entryCount = user.entries;
-  let entryIndex;
-  
-  useEffect(() => {
-    entryIndex = entryCount >= 2
-      ? Math.floor(Math.random() * entries.length)
-      : entryCount;
-
-    setEntry({
-      ...entry,
-      set: true,
-      index: entryIndex
-    });
-  }, [entry]);
-
-  const entryObj = entries[entryIndex];
-
+const Entry = ({ entry }) => {
   return (
     <div className="entry-container">
       <span id="entry-question-text">
-        {entryObj.text}
+        {entry.obj.text}
       </span>
     </div>
   );
