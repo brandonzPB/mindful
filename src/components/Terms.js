@@ -48,9 +48,9 @@ const Terms = () => {
           : <div className="terms-inner-container">
             <div className="terms-text-container">
               <span className="terms-header">Our Terms, Your Privacy</span>
-              <span className="terms-text">We only collect the name and email you provide to Facebook.</span>
-              <span className="terms-text">We don't collect your responses to questions, nor do we track you in any way.</span>
-              <span className="terms-text">The sole purpose of this app is to provide a resource to you that can help you become a more mindful and happy person</span>
+              <span className="terms-text">We only collect the name and email you provide to Facebook. </span>
+              <span className="terms-text">We don't collect your responses to questions, nor do we track you in any way. </span>
+              <span className="terms-text">The sole purpose of this app is to provide a resource to you that can help you become a more mindful and peaceful person. </span>
             </div>
             <span className="terms-text">Click the "Login with Facebook" below if you accept these terms and conditions</span>
             <FacebookLogin
