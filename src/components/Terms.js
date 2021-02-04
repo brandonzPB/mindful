@@ -7,6 +7,24 @@ const Terms = () => {
 
   const [rejected, setRejected] = useState({ state: false });
 
+  // redirects to index if createToken doesn't exist
+  if (!user.createToken) {
+    return (
+      <Route exact path="/terms">
+        <Redirect to="/" />
+      </Route>
+    )
+  }
+
+  // redirects to dashboard if logged in
+  if (user.accessToken) {
+    return (
+      <Route exact path="/terms">
+        <Redirect to="/dashboard" />
+      </Route>
+    )
+  }
+
   const acceptTerms = () => {
     const userObj = {
       email: user.email,
@@ -18,7 +36,7 @@ const Terms = () => {
   }
 
   // deletes user
-  const rejectTerms = async () => {
+  const rejectTerms = () => {
     const userObject = {
       email: user.email,
       _id: user._id
@@ -30,15 +48,6 @@ const Terms = () => {
       ...rejected,
       state: true
     });
-  }
-
-  // redirects to dashboard if logged in
-  if (user.accessToken) {
-    return (
-      <Route exact path="/terms">
-        <Redirect to="/dashboard" />
-      </Route>
-    )
   }
 
   return (

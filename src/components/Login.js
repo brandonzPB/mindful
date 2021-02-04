@@ -3,7 +3,7 @@ import userService from '../services/userService';
 import { UserContext } from '../contexts/UserContext';
 
 const Login = () => {
-  const { user, dispatch, login } = useContext(UserContext);
+  const { login } = useContext(UserContext);
 
   const [info, setInfo] = useState({
     name: '',
@@ -40,7 +40,6 @@ const Login = () => {
       return false;
     }
 
-    let type;
     const userObj = { password: info.password };
 
     if (info.name.trim() === '' && info.email.trim() === '') {
@@ -49,20 +48,17 @@ const Login = () => {
 
     } else if (info.name.trim() === '') {
       // only name is empty
-      type = 'email';
+      userObj.type = 'email';
       userObj.email = info.email;
 
     } else if (info.email.trim() === '') {
       // only email is empty
-      type = 'name'
+      userObj.type = 'name'
       userObj.name = info.name;
     }
 
     // check if user exists in database
     const res = await userService.check(userObj);
-
-    console.log('res', res);
-    return false;
 
     if (res.result === 'User is free') {
       return setErr({
@@ -86,7 +82,7 @@ const Login = () => {
       });
     }
 
-    // login user
+    login(userObj);
   }
 
   return (

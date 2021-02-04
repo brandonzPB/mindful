@@ -14,6 +14,7 @@ import RecApps from './components/RecApps';
 import Timer from './components/Timer';
 
 import EntryForm from './components/EntryForm';
+import Settings from './components/Settings';
 
 function App() {
   return (
@@ -25,6 +26,8 @@ function App() {
           <Route exact path="/" component={Welcome} />
           <Route exact path="/create" component={CreateUser} />
           <Route exact path="/terms" component={Terms} />
+
+          <Route exact path="/settings" component={Settings} />
           <Route exact path="/dashboard" component={Dashboard} />
           <Route exact path="/info" component={Info} />
           

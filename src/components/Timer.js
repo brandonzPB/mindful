@@ -107,7 +107,7 @@ const Timer = () => {
   const handleChange = event => {
     const { name, value } = event.target;
 
-    if (value % 2 != 0 && value % 2 != 1) return;
+    if (value % 2 !== 0 && value % 2 !== 1) return;
 
     setTimer({
       ...timer,

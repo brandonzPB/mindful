@@ -94,6 +94,7 @@ const UserContextProvider = (props) => {
         login, logout,
         updateEntries, 
         removeUserOnReject,
+        removeUser,
     }}>
       {props.children}
     </UserContext.Provider>

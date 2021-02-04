@@ -1,11 +1,10 @@
 import React, { useContext } from 'react';
 import { Route, Redirect } from 'react-router-dom';
 import { UserContext } from '../contexts/UserContext';
-import userService from '../services/userService';
 import Login from './Login';
 
 const Welcome = () => {
-  const { user, login, dispatch, link, setDest } = useContext(UserContext);
+  const { user, link, setDest } = useContext(UserContext);
 
   if (user.accessToken) {
     return (
@@ -21,10 +20,6 @@ const Welcome = () => {
         <Redirect to="/create" />
       </Route>
     )
-  }
-
-  const handleLogin = info => {
-    login(user);
   }
 
   return (

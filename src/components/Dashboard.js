@@ -10,8 +10,9 @@ import infoImg from '../images/knowledge.jpeg';
 const Dashboard = () => {
   const { user, link, setDest } = useContext(UserContext);
 
-  const [title, setTitle] = useState({ ref: '' });
+  const [title, setTitle] = useState({ ref: 'start' });
 
+  // user is logged out; redirect to index
   if (!user.accessToken) {
     return (
       <Route exact path="/dashboard">
@@ -19,6 +20,58 @@ const Dashboard = () => {
       </Route>
     )
   }  
+
+  // route to info page
+  if (link.dest === 'info') {
+    return (
+      <Route exact path="/dashboard">
+        <Redirect to="/info" />
+      </Route>
+    )
+  }
+
+  // route to entry form
+  if (link.dest === 'entry') {
+    return (
+      <Route exact path="/dashboard">
+        <Redirect to="/entry" />
+      </Route>
+    )
+  }
+
+  // route to videos
+  if (link.dest === 'videos') {
+    return (
+      <Route exact path="/dashboard">
+        <Redirect to="/videos" />
+      </Route>
+    )
+  }
+
+  // route to apps
+  if (link.dest === 'apps') {
+    return (
+      <Route exact path="/dashboard">
+        <Redirect to="/apps" />
+      </Route>
+    )
+  }
+
+  // route to timer
+  if (link.dest === 'timer') {
+    return (
+      <Route exact path="/dashboard">
+        <Redirect to="/timer" />
+      </Route>
+    )
+  }
+
+  // route to settings
+  if (link.dest === 'settings') {
+    <Route exact path="/dashboard">
+      <Redirect to="/settings" />
+    </Route>
+  }
 
   const handleMouseOver = event => {
     const eventClass = event.target.className;
@@ -35,60 +88,24 @@ const Dashboard = () => {
     });
   }
 
-  const handleMouseOut = event => {
+  const handleMouseOut = () => {
     setTitle({
       ...title,
       ref: ''
     });
   }
 
-  if (link.dest === 'info') {
-    return (
-      <Route exact path="/dashboard">
-        <Redirect to="/info" />
-      </Route>
-    )
-  }
-
-  if (link.dest === 'entry') {
-    return (
-      <Route exact path="/dashboard">
-        <Redirect to="/entry" />
-      </Route>
-    )
-  }
-
-  if (link.dest === 'videos') {
-    return (
-      <Route exact path="/dashboard">
-        <Redirect to="/videos" />
-      </Route>
-    )
-  }
-
-  if (link.dest === 'apps') {
-    return (
-      <Route exact path="/dashboard">
-        <Redirect to="/apps" />
-      </Route>
-    )
-  }
-
-  if (link.dest === 'timer') {
-    return (
-      <Route exact path="/dashboard">
-        <Redirect to="/timer" />
-      </Route>
-    )
-  }
-
   return (
     <div className="dashboard-container">
+      <div className="settings-btn-container">
+        <button id="settings-btn" onClick={() => setDest('settings')}>User Settings</button>
+      </div>
+
       <h1 className="dashboard-top-text">
         {
           user.entries > 0
-            ? `Welcome back, ${user.firstName} :)`
-            : `Welcome ${user.firstName} :)`
+            ? `Welcome back, ${user.name} :)`
+            : `Welcome, ${user.name} :)`
         }
       </h1>
       <h1 className="dashboard-top-text-info">
@@ -143,7 +160,8 @@ const Dashboard = () => {
       <div className="app-text-container">
         <span className="app-text">
           {
-            title.ref === 'video' ? 'Guided Meditation Videos'
+            title.ref === 'start' ? 'Hover over one of the icons!'
+              : title.ref === 'video' ? 'Guided Meditation Videos'
               : title.ref === 'app' ? 'Meditation Apps'
               : title.ref === 'timer' ? 'Meditation Timer'
               : title.ref === 'entry' ? 'Mindfulness Questions'
