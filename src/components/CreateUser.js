@@ -58,12 +58,12 @@ const CreateUser = () => {
     } else {
       // user exists
 
-      if (res.result === 'Name error') {
+      if (res.result === 'Name exists') {
         return setErr({
           ...err,
           ref: 'name'
         });
-      } else if (res.result === 'Email error') {
+      } else if (res.result === 'Email exists') {
         return setErr({
           ...err,
           ref: 'email'

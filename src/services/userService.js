@@ -49,8 +49,8 @@ const completeEntry = (userObject, userId, token) => {
     .catch(err => console.error(err));
 }
 
-// DELETE USER
-const remove = (userObject, token) => {
+// DELETE USER ON TERM REJECTION
+const removeOnReject = (userObject, token) => {
   const req = axios.delete(`${baseUrl}`, {
     params: userObject,
     headers: {
@@ -62,11 +62,15 @@ const remove = (userObject, token) => {
     .catch(err => console.error(err));
 }
 
+// DELETE USER
+const remove = () => {}
+
 export default {
   check,
   create,
   login,
   getUserInfo,
   completeEntry,
+  removeOnReject,
   remove
 }
