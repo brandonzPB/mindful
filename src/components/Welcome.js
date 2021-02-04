@@ -1,12 +1,11 @@
-import React, { useState, useContext } from 'react';
+import React, { useContext } from 'react';
 import { Route, Redirect } from 'react-router-dom';
 import { UserContext } from '../contexts/UserContext';
 import userService from '../services/userService';
+import Login from './Login';
 
 const Welcome = () => {
-  const { user, login, dispatch } = useContext(UserContext);
-
-  const [creationDone, setCreationDone] = useState(false);
+  const { user, login, dispatch, link, setDest } = useContext(UserContext);
 
   if (user.accessToken) {
     return (
@@ -16,55 +15,35 @@ const Welcome = () => {
     )
   }
 
-  const responseFacebook = async (response) => {
-    const user = {
-      name: response.name,
-      email: response.email
-    };
+  if (link.dest === 'create') {
+    return (
+      <Route exact path="/">
+        <Redirect to="/create" />
+      </Route>
+    )
+  }
 
-    const res = await userService.check(user);
-
-    if (res.result === null) {
-      await userService.create(user)
-        .then(res => {
-          console.log('res', res);
-
-          dispatch({ type: 'CREATE_USER', user: {
-            email: res.email,
-            createToken: res.createToken
-          }});
-
-          return res;
-        })
-        .catch(err => console.error(err));
-
-      if (creationDone) return;
-      return setCreationDone(!creationDone);
-    }
-
-    // user exists
+  const handleLogin = info => {
     login(user);
   }
 
-  const createAccount = () => {}
-
   return (
     <div className="welcome-container">
-      {
-        creationDone
-          ? <Route exact path="/">
-            <Redirect to="/terms" />
-          </Route>
-          : <div className="welcome-login-container">
-            <span className="welcome-text">welcome to mindful.io</span>
-            <span className="welcome-text-info">The free website that helps you be more at peace in your daily life with a simple, healthy habit</span>
-            <div className="welcome-user-container">
-              <Login />
-              <span className="login-info">Don't have an account?</span>
-              <button id="create-btn" onClick={createAccount}>Create an Account</button>
-            </div>
+      <div className="welcome-login-container">
+        <span className="welcome-text">welcome to mindful.io</span>
+
+        <span className="welcome-text-info">The free website that helps you be more at peace in your daily life with a simple, healthy habit</span>
+        
+        <div className="welcome-user-container">
+          <Login />
+
+          <div className="create-container">
+            <span className="login-info">Don't have an account?</span>
+            <button id="create-btn" onClick={() => setDest('create')}>Create an Account</button>
           </div>
-      }
+        </div>
+        
+      </div>
     </div>
   );
 }

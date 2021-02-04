@@ -1,11 +1,10 @@
 import React, { useContext } from 'react';
 import { FacebookShareButton, FacebookIcon } from 'react-share';
 import { UserContext } from '../contexts/UserContext';
-import PropTypes from 'prop-types';
 
 const Modal = ({ modalState, closeModal }) => {
   const { user } = useContext(UserContext);
-  const shareUrl = 'https://brandonzpb.github.io/creatures';
+  const shareUrl = 'https://brandonzpb.github.io/mindful.io';
   const title = 'Live in the Present with Mindful.io';
 
   const downloadTxt = () => {
