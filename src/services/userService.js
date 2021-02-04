@@ -49,10 +49,9 @@ const completeEntry = (userObject, userId, token) => {
     .catch(err => console.error(err));
 }
 
-// DELETE USER ON TERM REJECTION
-const removeOnReject = (userObject, token) => {
-  const req = axios.delete(`${baseUrl}`, {
-    params: userObject,
+// DELETE USER ON POLICY REJECTION
+const removeUserOnReject = (userObject, token) => {
+  const req = axios.delete(`${baseUrl}/${userObject._id}/reject`, {
     headers: {
       'Authorization': `Bearer ${token}`
     }
@@ -63,7 +62,16 @@ const removeOnReject = (userObject, token) => {
 }
 
 // DELETE USER
-const remove = () => {}
+const removeUser = (userObject, token) => {
+  const req = axios.delete(`${baseUrl}/${userObject._id}/`, {
+    headers: {
+      'Authorization': `Bearer ${token}`
+    }
+  });
+
+  return req.then(res => res.data)
+    .catch(err => console.error(err));
+}
 
 export default {
   check,
@@ -71,6 +79,6 @@ export default {
   login,
   getUserInfo,
   completeEntry,
-  removeOnReject,
-  remove
+  removeUserOnReject,
+  removeUser
 }

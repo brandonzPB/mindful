@@ -4,7 +4,6 @@ import UserContextProvider from './contexts/UserContext';
 
 import Welcome from './components/Welcome';
 import CreateUser from './components/CreateUser';
-import Login from './components/Login';
 import Terms from './components/Terms';
 import LogoutButton from './components/LogoutButton';
 import Info from './components/Info';
@@ -25,8 +24,6 @@ function App() {
 
           <Route exact path="/" component={Welcome} />
           <Route exact path="/create" component={CreateUser} />
-          <Route exact path="/login" component={Login} />
-
           <Route exact path="/terms" component={Terms} />
           <Route exact path="/dashboard" component={Dashboard} />
           <Route exact path="/info" component={Info} />

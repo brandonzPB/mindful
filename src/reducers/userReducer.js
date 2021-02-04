@@ -4,13 +4,14 @@ const userReducer = (state, action) => {
       return {
         ...state,
         email: action.user.email,
+        password: action.user.password,
+        _id: action.user._id,
         createToken: action.user.createToken
       };
     case 'LOG_IN':
       return {
         ...state,
         name: action.user.name,
-        firstName: action.user.firstName,
         email: action.user.email,
         entries: action.user.entries,
         tempText: [],

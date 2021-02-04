@@ -34,6 +34,24 @@ const CreateUser = () => {
       ref: ''
     });
 
+    // at least one password is left blank
+    if (!account.password.trim() || !account.confirmPassword.trim()) {
+      return setErr({
+        ...err,
+        ref: 'password'
+      });
+    } else if (!account.name.trim()) {
+      return setErr({
+        ...err,
+        ref: 'name'
+      });
+    } else if (!account.email.trim()) {
+      return setErr({
+        ...err,
+        ref: 'email'
+      });
+    }
+
     // password inputs don't match
     if (account.password !== account.confirmPassword) {
       return setErr({

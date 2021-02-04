@@ -32,6 +32,8 @@ const UserContextProvider = (props) => {
 
         dispatch({ type: 'CREATE_USER', user: {
           email: res.email,
+          password: res.password,
+          _id: res._id,
           createToken: res.createToken
         }});
 
@@ -44,17 +46,9 @@ const UserContextProvider = (props) => {
     userService.login(user)
       .then(res => {
         console.log('res', res);
-
-        const whiteSpaceIndex = res.name.indexOf(' ');
-
-        let firstName = '';
-        for (let i = 0; i < whiteSpaceIndex; i++) {
-          firstName += res.name[i];
-        }
         
         dispatch({ type: 'LOG_IN', user: {
           name: res.name,
-          firstName,
           email: res.email,
           entries: res.entries,
           id: res.id,
@@ -75,12 +69,20 @@ const UserContextProvider = (props) => {
 
   const logout = () => {
     dispatch({ type: 'LOG_OUT' });
+
     localStorage.removeItem('my-user');
   }
 
-  const removeUser = userObject => {
-    localStorage.removeItem('my-user');
-    userService.remove(userObject, user.createToken);
+  const removeUserOnReject = userObject => {
+    userService.removeUserOnReject(userObject, user.createToken);
+
+    logout();
+  }
+
+  const removeUser = () => {
+    userService.removeUser(user);
+
+    logout();
   }
 
   return (
@@ -91,7 +93,7 @@ const UserContextProvider = (props) => {
         createUser,
         login, logout,
         updateEntries, 
-        removeUser,
+        removeUserOnReject,
     }}>
       {props.children}
     </UserContext.Provider>
