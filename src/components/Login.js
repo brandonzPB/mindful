@@ -25,41 +25,74 @@ const Login = () => {
     });
   }
 
-  const handleSubmit = event => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
 
+    // reset error state to blank
+    setErr({
+      ...err,
+      status: false,
+      ref: ''
+    });
+
+    // check if name and email are empty
     if (!info.name.trim() && !info.email.trim()) {
       return false;
     }
 
-    const userObj = {
-      name: info.name,
-      email: info.email,
-      password: info.password
-    };
+    let type;
+    const userObj = { password: info.password };
 
-    const res = userService.check(userObj);
+    if (info.name.trim() === '' && info.email.trim() === '') {
+      // both name and email are empty (somehow passed first check)
+      return false;
 
-    if (res === null) {
-      // user doesn't exist
+    } else if (info.name.trim() === '') {
+      // only name is empty
+      type = 'email';
+      userObj.email = info.email;
 
+    } else if (info.email.trim() === '') {
+      // only email is empty
+      type = 'name'
+      userObj.name = info.name;
+    }
+
+    // check if user exists in database
+    const res = await userService.check(userObj);
+
+    console.log('res', res);
+    return false;
+
+    if (res.result === 'User is free') {
       return setErr({
         ...err,
         status: true
       });
-    } else if (res.result === 'Password error') {
+    }
+
+    // checks if login is successful
+    const loginRes = await userService.login(userObj);
+
+    if (loginRes.result === 'Password incorrect') {
       return setErr({
         ...err,
         ref: 'password'
       });
-    } else {
-      // user exists
+    } else if (loginRes.result === 'User not found') {
+      return setErr({
+        ...err,
+        status: true
+      });
     }
+
+    // login user
   }
 
   return (
     <div className="login-container">
       <form onSubmit={handleSubmit}>
+        <label className="login-input-label">Name:</label>
         <input 
           style={{ border: err.status ? '2px solid red' : 'none' }}
           type="name"
@@ -68,6 +101,8 @@ const Login = () => {
           onChange={handleChange}
           className="login-input"
         />
+
+        <label className="login-input-label">or Email:</label>
         <input 
           style={{ border: err.status ? '2px solid red': 'none' }}
           type="email"
@@ -76,6 +111,8 @@ const Login = () => {
           onChange={handleChange}
           className="login-input"
         />
+
+        <label className="login-input-label">Password:</label>
         <input 
           style={{ border: err.ref === 'password' ? '2px solid red' : 'none' }}
           type="password"

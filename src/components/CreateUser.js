@@ -1,15 +1,17 @@
 import React, { useState, useContext } from 'react';
+import { Route, Redirect } from 'react-router-dom';
 import { UserContext } from '../contexts/UserContext';
 import userService from '../services/userService';
 
 const CreateUser = () => {
-  const { user, dispatch } = useContext(UserContext);
+  const { createUser } = useContext(UserContext);
 
   const [account, setAccount] = useState({
     name: '',
     email: '',
     password: '',
-    confirmPassword: ''
+    confirmPassword: '',
+    created: false, // redirects to privacy policy upon creation
   });
 
   const [err, setErr] = useState({ ref: '' });
@@ -26,6 +28,13 @@ const CreateUser = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
 
+    // reset error state to blank
+    setErr({
+      ...err,
+      ref: ''
+    });
+
+    // password inputs don't match
     if (account.password !== account.confirmPassword) {
       return setErr({
         ...err,
@@ -35,80 +44,89 @@ const CreateUser = () => {
 
     const userObj = {
       name: account.name,
-      email: account.email
+      email: account.email,
+      password: account.password
     };
 
-    const res = await userService.check(userObj);
+    // check if user already exists
+    const response = await userService.check(userObj);
 
-    if (res === null) {
-      // user doesn't exist
-      
-      await userService.create(user)
-        .then(res => {
-          console.log('res', res);
+    if (response.result === 'User is free') {
 
-          dispatch({ type: 'CREATE_USER', user: {
-            email: res.email,
-            createToken: res.createToken
-          }});
+      await createUser(userObj);
 
-          return res;
-        })
-        .catch(err => console.error(err));
-    } else {
-      // user exists
+      return setAccount({
+        ...account,
+        created: true
+      });
 
-      if (res.result === 'Name exists') {
-        return setErr({
-          ...err,
-          ref: 'name'
-        });
-      } else if (res.result === 'Email exists') {
-        return setErr({
-          ...err,
-          ref: 'email'
-        });
-      }
+    } else if (response.result === 'Name exists') {
+      return setErr({
+        ...err,
+        ref: 'name'
+      });
+
+    } else if (response.result === 'Email exists') {
+      return setErr({
+        ...err,
+        ref: 'email'
+      });
     }
   }
 
   return (
     <div className="create-user-container">
-      <form onSubmit={handleSubmit}>
-        <input 
-          style={{ border: err.ref === 'name' ? '2px solid red' : 'none' }}
-          type="text"
-          name="name"
-          value={user.name}
-          onChange={handleChange}
-          className="create-input"
-        />
-        <input 
-          style={{ border: err.ref === 'email' ? '2px solid red' : 'none' }}
-          type="email"
-          name="email"
-          value={user.email}
-          onChange={handleChange}
-          className="create-input"
-        />
-        <input
-          style={{ border: err.ref === 'password' ? '2px solid red' : 'none' }} 
-          type="password"
-          name="password"
-          value={user.password}
-          onChange={handleChange}
-          className="create-input"
-        />
-        <input 
-          style={{ border: err.ref === 'password' ? '2px solid red' : 'none' }}
-          type="password"
-          name="confirmPassword"
-          value={user.password}
-          onChange={handleChange}
-          className="create-input"
-        />
-        <button className="create-user-btn">Create User</button>
-      </form>
+      {
+        account.created ?
+          <Route exact path="/create">
+            <Redirect to="/terms" />
+          </Route>
+          : <form onSubmit={handleSubmit}>
+            <label className="create-input-label">Name:</label>
+            <input 
+              style={{ border: err.ref === 'name' ? '2px solid red' : 'none' }}
+              type="text"
+              name="name"
+              value={account.name}
+              onChange={handleChange}
+              className="create-input"
+            />
+
+            <label className="create-input-label">Email:</label>
+            <input 
+              style={{ border: err.ref === 'email' ? '2px solid red' : 'none' }}
+              type="email"
+              minLength={3}
+              name="email"
+              value={account.email}
+              onChange={handleChange}
+              className="create-input"
+            />
+
+            <label className="create-input-label">Password:</label>
+            <input
+              style={{ border: err.ref === 'password' ? '2px solid red' : 'none' }} 
+              type="password"
+              name="password"
+              value={account.password}
+              onChange={handleChange}
+              className="create-input"
+            />
+
+            <label className="create-input-label">Confirm Password:</label>
+            <input 
+              style={{ border: err.ref === 'password' ? '2px solid red' : 'none' }}
+              type="password"
+              minLength={5}
+              maxLength={31}
+              name="confirmPassword"
+              value={account.confirmPassword}
+              onChange={handleChange}
+              className="create-input"
+            />
+            <button className="create-user-btn">Create User</button>
+          </form>
+      }
     </div>
   );
 }

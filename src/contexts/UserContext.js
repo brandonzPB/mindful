@@ -25,6 +25,21 @@ const UserContextProvider = (props) => {
     });
   }
 
+  const createUser = async (userObj) => {
+    await userService.create(userObj)
+      .then(res => {
+        console.log('res', res);
+
+        dispatch({ type: 'CREATE_USER', user: {
+          email: res.email,
+          createToken: res.createToken
+        }});
+
+        return res;
+      })
+      .catch(err => console.error(err));
+  }
+
   const login = user => {
     userService.login(user)
       .then(res => {
@@ -63,13 +78,20 @@ const UserContextProvider = (props) => {
     localStorage.removeItem('my-user');
   }
 
+  const removeUser = userObject => {
+    localStorage.removeItem('my-user');
+    userService.remove(userObject, user.createToken);
+  }
+
   return (
     <UserContext.Provider value={{ 
         user, dispatch, 
         link, setLink, 
         setDest, 
+        createUser,
         login, logout,
         updateEntries, 
+        removeUser,
     }}>
       {props.children}
     </UserContext.Provider>
