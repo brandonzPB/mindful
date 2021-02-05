@@ -30,9 +30,9 @@ const Welcome = () => {
         <span className="welcome-text-info">The free website that helps you be more at peace in your daily life with a simple, healthy habit</span>
         
         <div className="welcome-user-container">
-          <Login />
-
           <div className="create-container">
+            <Login />
+            
             <span className="login-info">Don't have an account?</span>
             <button id="create-btn" onClick={() => setDest('create')}>Create an Account</button>
           </div>

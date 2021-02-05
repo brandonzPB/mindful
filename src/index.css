@@ -91,7 +91,7 @@ html {
 /* WELCOME */
 
 .welcome-container {
-  margin: 200px auto 0 auto;
+  margin: 120px auto 0 auto;
   display: flex;
   flex: 1;
   flex-wrap: wrap;
@@ -110,15 +110,107 @@ html {
 
 .welcome-text {
   display: block;
+  margin: -30px auto;
 }
 
 .welcome-text-info {
   font-size: 2rem;
+  margin: 0 auto;
 }
 
 .login-btn-container {
   margin: 0 auto;
   text-align: center;
+}
+
+.create-container {
+  margin: 20px auto 0 auto;
+  display: flex;
+  flex: 1;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border: none;
+  box-shadow: 0 0 3px black;
+  background: linear-gradient(25deg,
+    rgba(0, 0, 0, 0.7),
+    rgba(49, 49, 49, 0.7));
+  width: 500px;
+  height: auto;
+  padding: 30px 5px;
+  border-radius: 10px;
+}
+
+.login-info {
+  font-size: 2rem;
+  display: block;
+  margin: 40px auto 20px auto;
+}
+
+#create-btn {
+  font-size: 1.5rem;
+  color: black;
+  background-color: rgb(255, 226, 61);
+  width: 275px;
+  height: 40px;
+  font-weight: 600;
+  border-radius: 5px;
+  border: none;
+  box-shadow: 0 0 3px black;
+}
+
+#create-btn:hover {
+  background-color: rgb(253, 230, 101);
+}
+
+#create-btn:active {
+  background-color: gold;
+}
+
+/* LOGIN */
+
+.login-container {}
+
+.login-form {
+  font-size: 2rem;
+}
+
+.login-input-label {
+  display: block;
+  margin: 10px auto;
+}
+
+.login-input {
+  display: block;
+  margin: 0 auto 20px auto;
+  width: 275px;
+  font-size: 1.5rem;
+  box-shadow: 0 0 6px black;
+}
+
+.login-btn {
+  display: block;
+  text-align: center;
+  margin: 40px auto 0 auto;
+  background-color: rgb(255, 226, 61);
+  color: black;
+  border: none;
+  box-shadow: 0 0 3px black;
+  width: 110px;
+  height: 35px;
+  border-radius: 5px;
+  font-weight: 600;
+  font-size: 1.5rem;
+}
+
+.login-btn:hover {
+  background-color: rgb(253, 230, 98);
+}
+
+.login-btn:active {
+  background-color: gold;
 }
 
 /* TERMS */
