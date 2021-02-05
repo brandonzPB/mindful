@@ -66,12 +66,12 @@ const Terms = () => {
             </div>
 
             <div id="accept-container">
-              <span className="terms-text">Click the "Accept Terms" below if you accept these terms and conditions</span>
+              <span className="terms-text">Click the "Accept Terms" below to accept these terms and conditions.</span>
               <button onClick={acceptTerms} id="accept-btn">Accept Terms</button>
             </div>
 
             <div id="reject-container">
-              <span className="terms-text">Otherwise, click "Reject Terms" and your account will be immediately deleted</span>
+              <span className="terms-text">Otherwise, you can click "Reject Terms" and your account will be immediately deleted.</span>
               <button onClick={rejectTerms} id="reject-btn">Reject Terms</button>
             </div>
           </div>

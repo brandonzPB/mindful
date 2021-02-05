@@ -213,6 +213,67 @@ html {
   background-color: gold;
 }
 
+/* CREATE USER */
+
+.create-parent-container {
+  margin: 60px auto;
+}
+
+.create-header {
+  color: white;
+  font-size: 4rem;
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.create-user-container {
+  margin: 80px auto;
+  display: flex;
+  flex: 1;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: linear-gradient(25deg,
+    rgba(0, 0, 0, 0.7),
+    rgba(49, 49, 49, 0.7));
+  border: none;
+  box-shadow: 0 0 3px black;
+  border-radius: 5px;
+  width: 500px;
+  height: auto;
+  padding: 40px 20px;
+}
+
+#create-user-form {}
+
+.create-input-label {
+  display: block;
+  font-size: 2rem;
+  color: white;
+}
+
+.create-input {
+  display: block;
+  margin: 20px auto 40px auto;
+  font-size: 1.75rem;
+  box-shadow: 0 0 6px black;
+}
+
+.create-user-btn {
+  background-color: rgb(255, 226, 61);
+  color: black;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 0 3px black;
+  width: 200px;
+  height: 35px;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
 /* TERMS */
 
 .terms-container {
@@ -225,6 +286,8 @@ html {
   justify-content: center;
   text-align: center;
   color: white;
+  width: 85%;
+  font-size: 2.5rem;
 }
 
 .terms-inner-container {
@@ -252,10 +315,41 @@ html {
   margin: 30px auto;
 }
 
-.reject-btn {
-  font-size: 1.5rem;
+#accept-container {
+  margin: 40px auto;
+}
+
+#accept-btn {
+  display: block;
+  margin: 20px auto;
+  font-size: 2rem;
+  background-color: gold;
+  font-weight: 600;
+  width: 230px;
+  height: 50px;
+  border: none;
+  box-shadow: 0 0 3px black;
+  border-radius: 5px;
+}
+
+#accept-btn:hover {
+  background-color: rgb(252, 221, 45);
+}
+
+#accept-btn:active {
+  background-color: gold;
+}
+
+#reject-container {
+  margin: 30px auto;
+}
+
+#reject-btn {
+  font-size: 1.75rem;
   display: block;
   margin: 30px auto;
+  background-color: rgb(216, 118, 118);
+  border: none;
 }
 
 /* INFO */

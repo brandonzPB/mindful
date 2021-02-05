@@ -93,57 +93,62 @@ const CreateUser = () => {
   }
 
   return (
-    <div className="create-user-container">
+    <div className="create-parent-container">
       {
         account.created ?
           <Route exact path="/create">
             <Redirect to="/terms" />
           </Route>
-          : <form onSubmit={handleSubmit}>
-            <label className="create-input-label">Name:</label>
-            <input 
-              style={{ border: err.ref === 'name' ? '2px solid red' : 'none' }}
-              type="text"
-              name="name"
-              value={account.name}
-              onChange={handleChange}
-              className="create-input"
-            />
+          : <div className="create-form-container">
+            <span className="create-header">Create Your Account</span>
+            <div className="create-user-container">
+              <form onSubmit={handleSubmit} id="create-user-form">
+                <label className="create-input-label">Name:</label>
+                <input 
+                  style={{ border: err.ref === 'name' ? '2px solid red' : 'none' }}
+                  type="text"
+                  name="name"
+                  value={account.name}
+                  onChange={handleChange}
+                  className="create-input"
+                />
 
-            <label className="create-input-label">Email:</label>
-            <input 
-              style={{ border: err.ref === 'email' ? '2px solid red' : 'none' }}
-              type="email"
-              minLength={3}
-              name="email"
-              value={account.email}
-              onChange={handleChange}
-              className="create-input"
-            />
+                <label className="create-input-label">Email:</label>
+                <input 
+                  style={{ border: err.ref === 'email' ? '2px solid red' : 'none' }}
+                  type="email"
+                  minLength={3}
+                  name="email"
+                  value={account.email}
+                  onChange={handleChange}
+                  className="create-input"
+                />
 
-            <label className="create-input-label">Password:</label>
-            <input
-              style={{ border: err.ref === 'password' ? '2px solid red' : 'none' }} 
-              type="password"
-              name="password"
-              value={account.password}
-              onChange={handleChange}
-              className="create-input"
-            />
+                <label className="create-input-label">Password:</label>
+                <input
+                  style={{ border: err.ref === 'password' ? '2px solid red' : 'none' }} 
+                  type="password"
+                  name="password"
+                  value={account.password}
+                  onChange={handleChange}
+                  className="create-input"
+                />
 
-            <label className="create-input-label">Confirm Password:</label>
-            <input 
-              style={{ border: err.ref === 'password' ? '2px solid red' : 'none' }}
-              type="password"
-              minLength={5}
-              maxLength={31}
-              name="confirmPassword"
-              value={account.confirmPassword}
-              onChange={handleChange}
-              className="create-input"
-            />
-            <button className="create-user-btn">Create User</button>
-          </form>
+                <label className="create-input-label">Confirm Password:</label>
+                <input 
+                  style={{ border: err.ref === 'password' ? '2px solid red' : 'none' }}
+                  type="password"
+                  minLength={5}
+                  maxLength={31}
+                  name="confirmPassword"
+                  value={account.confirmPassword}
+                  onChange={handleChange}
+                  className="create-input"
+                />
+                <button className="create-user-btn">Create User</button>
+              </form>
+            </div>
+          </div>
       }
     </div>
   );
