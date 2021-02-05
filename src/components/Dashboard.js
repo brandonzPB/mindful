@@ -68,9 +68,11 @@ const Dashboard = () => {
 
   // route to settings
   if (link.dest === 'settings') {
-    <Route exact path="/dashboard">
-      <Redirect to="/settings" />
-    </Route>
+    return (
+      <Route exact path="/dashboard">
+        <Redirect to="/settings" />
+      </Route>
+    )
   }
 
   const handleMouseOver = event => {

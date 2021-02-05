@@ -67,10 +67,10 @@ const Settings = () => {
       </div>
 
       <div id="text-container">
-        <span className="delete-text">The benefits of using mindful.io don't depend on how long you've been using a single account.</span>
-        <span className="delete-text">If you wish to change your name or email, you can simply delete your account and create a new one.</span>
-        <span className="delete-text">Why? We want to fulfill our promise to you and not collect any more information than what you provide us.</span>
-        <span className="delete-text">Unlike other social media platforms, once you change your email with us (by deleting your account), it's gone for good. It's that simple.</span>
+        <span className="delete-text">The benefits of using mindful.io don't depend on how long you've been using a single account. </span>
+        <span className="delete-text">If you wish to change your name or email, you can simply delete your account and create a new one. </span>
+        <span className="delete-text">Why? We want to fulfill our promise to you and not collect any more information than what you provide us. </span>
+        <span className="delete-text">Unlike other social media platforms, once you change your email with us (by creating a new account), it's gone for good. It's that simple.</span>
       </div>
 
       <form onSubmit={handleSubmit} className="delete-form">
