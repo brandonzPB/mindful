@@ -63,7 +63,7 @@ const removeUserOnReject = (userObject, token) => {
 
 // DELETE USER
 const removeUser = (userObject, token) => {
-  const req = axios.delete(`${baseUrl}/${userObject._id}/`, {
+  const req = axios.delete(`${baseUrl}/${userObject._id}`, {
     headers: {
       'Authorization': `Bearer ${token}`
     }

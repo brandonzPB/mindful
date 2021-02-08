@@ -58,6 +58,8 @@ const Settings = () => {
         state: true
       });
     }
+
+    removeUser();
   }
 
   return (

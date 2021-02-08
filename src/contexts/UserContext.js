@@ -80,7 +80,7 @@ const UserContextProvider = (props) => {
   }
 
   const removeUser = () => {
-    userService.removeUser(user);
+    userService.removeUser(user, user.accessToken);
 
     logout();
   }
