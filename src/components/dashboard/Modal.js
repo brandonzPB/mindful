@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { FacebookShareButton, FacebookIcon } from 'react-share';
-import { UserContext } from '../contexts/UserContext';
+import { UserContext } from '../../contexts/UserContext';
+import './modal.css';
 
 const Modal = ({ modalState, closeModal }) => {
   const { user } = useContext(UserContext);

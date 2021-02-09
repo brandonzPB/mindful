@@ -1,0 +1,106 @@
+/* MODAL */
+
+.modal-parent-container {
+  z-index: 2;
+  width: 115.2rem;
+  height: 115.2rem;
+  position: absolute;
+  top: -30rem;
+  left: 0;
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-container {
+  z-index: 3;
+  background: linear-gradient(25deg,
+    rgba(83,95,45),
+    rgb(111, 124, 68),
+    rgb(132, 144, 91));
+  color: rgb(248,244,232);
+  width: 36.67rem;
+  height: 50rem;
+  position: relative;
+  top: 4rem;
+  left: 7.067rem;
+  border-radius: 5px;
+  box-shadow: 2rem 2rem 10rem black;
+  padding: 1.33rem;
+}
+
+.fb-share-container {
+  display: flex;
+  flex: 1;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin: 0.67rem auto 3.33rem auto;
+}
+
+.fb-share-text {
+  display: block;
+  font-size: 2.5rem;
+  margin: 1.33rem auto;
+}
+
+.fb-share-btn {}
+
+.save-file-container {
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
+  flex: 1;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.save-file-text {
+  font-size: 1.75rem;
+  display: block;
+}
+
+.save-file-btn {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: black;
+  background-color: gold;
+  border: none;
+  box-shadow: 0 0 2px black;
+  border-radius: 4px;
+  margin: 1.33rem auto;
+  width: 8.67rem;
+  height: auto;
+  padding: 0.67rem;
+}
+
+.save-file-btn:hover {
+  background-color: rgb(255, 225, 53);
+}
+
+.save-file-btn:active {
+  background-color: gold;
+}
+
+.close-container {
+  margin: 1.33rem auto;
+}
+
+.close-btn {
+  font-size: 1.5rem;
+  color: black;
+  border: none;
+  border-radius: 4px;
+  box-shadow: 0 0 2px black;
+  padding: 0.67rem;
+  background-color: rgb(127,93,83);
+  color: white;
+}
+
+@media only screen and (max-device-width: 450px) {}

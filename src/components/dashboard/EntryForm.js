@@ -1,9 +1,10 @@
 import React, { useState, useEffect, useContext } from 'react';
 import { Route, Redirect } from 'react-router-dom';
-import { UserContext } from '../contexts/UserContext';
+import { UserContext } from '../../contexts/UserContext';
 import Entry from './Entry';
 import Modal from './Modal';
-import { entries } from '../modules/entries';
+import { entries } from '../../modules/entries';
+import './entry.css';
 
 const EntryForm = () => {
   const { user, dispatch, updateEntries, link, setDest } = useContext(UserContext);

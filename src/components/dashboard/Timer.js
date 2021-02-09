@@ -1,7 +1,10 @@
 import React, { useState, useEffect, useContext } from 'react';
 import { Route, Redirect } from 'react-router-dom';
-import { UserContext } from '../contexts/UserContext';
-import chimeSrc from '../audio/chime.mp3';
+import { UserContext } from '../../contexts/UserContext';
+
+import './timer.css';
+
+import chimeSrc from '../../audio/chime.mp3';
 const chimeSound = new Audio(chimeSrc);
 
 const Timer = () => {

@@ -6,19 +6,18 @@ import Welcome from './components/Welcome';
 import CreateUser from './components/CreateUser';
 import Terms from './components/Terms';
 import LogoutButton from './components/LogoutButton';
-import Info from './components/Info';
-
-import Dashboard from './components/Dashboard';
-import RecVideos from './components/RecVideos';
-import RecApps from './components/RecApps';
-import Timer from './components/Timer';
-
-import EntryForm from './components/EntryForm';
 import Settings from './components/Settings';
+
+import Dashboard from './components/dashboard/Dashboard';
+import RecVideos from './components/dashboard/RecVideos';
+import RecApps from './components/dashboard/RecApps';
+import Timer from './components/dashboard/Timer';
+import EntryForm from './components/dashboard/EntryForm';
+import Info from './components/dashboard/Info';
 
 function App() {
   return (
-    <HashRouter basename="/">
+    <BrowserRouter>
       <div className="App">
         <UserContextProvider>
           <LogoutButton />
@@ -37,7 +36,7 @@ function App() {
           <Route exact path="/entry" component={EntryForm} />
         </UserContextProvider>
       </div>
-    </HashRouter>
+    </BrowserRouter>
   );
 }
 

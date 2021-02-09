@@ -1,11 +1,14 @@
 import React, { useContext } from 'react';
 import { Route, Redirect } from 'react-router-dom';
-import { UserContext } from '../contexts/UserContext';
-import buddhifyImg from '../images/buddhify.jpeg';
-import headspaceImg from '../images/headspace.jpeg';
-import insightImg from '../images/insight_timer.jpeg';
-import tenPercentImg from '../images/ten_percent.jpeg';
-import stopImg from '../images/stop_breathe_think.jpeg';
+import { UserContext } from '../../contexts/UserContext';
+
+import buddhifyImg from '../../images/buddhify.jpeg';
+import headspaceImg from '../../images/headspace.jpeg';
+import insightImg from '../../images/insight_timer.jpeg';
+import tenPercentImg from '../../images/ten_percent.jpeg';
+import stopImg from '../../images/stop_breathe_think.jpeg';
+
+import './recApp.css';
 
 const RecApps = () => {
   const { user, link, setDest } = useContext(UserContext);

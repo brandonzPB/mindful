@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { Route, Redirect } from 'react-router-dom';
-import { UserContext } from '../contexts/UserContext';
+import { UserContext } from '../../contexts/UserContext';
+import './recVideos.css';
 
 const RecVideos = () => {
   const { user, setDest, link } = useContext(UserContext);

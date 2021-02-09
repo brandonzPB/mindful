@@ -1,11 +1,14 @@
 import React, { useState, useContext } from 'react';
-import { UserContext } from '../contexts/UserContext';
+import { UserContext } from '../../contexts/UserContext';
 import { Route, Redirect } from 'react-router-dom';
-import timerImg from '../images/timer.jpeg';
-import videoImg from '../images/video.jpeg';
-import appImg from '../images/app.jpeg';
-import entryImg from '../images/meditate.jpeg';
-import infoImg from '../images/knowledge.jpeg';
+
+import timerImg from '../../images/timer.jpeg';
+import videoImg from '../../images/video.jpeg';
+import appImg from '../../images/app.jpeg';
+import entryImg from '../../images/meditate.jpeg';
+import infoImg from '../../images/knowledge.jpeg';
+
+import './dashboard.css';
 
 const Dashboard = () => {
   const { user, link, setDest } = useContext(UserContext);
