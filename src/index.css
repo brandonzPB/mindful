@@ -622,6 +622,25 @@ html {
   margin: 0.67rem auto 4.67rem auto;
 }
 
+#extra-video-container {
+  margin: 3rem auto;
+}
+
+#extra-video-container a,
+#extra-video-container a:link,
+#extra-video-container a:visited {
+  color: white;
+  text-decoration: none;
+}
+
+#extra-video-text {
+  font-size: 2rem;
+}
+
+#extra-video-text:hover {
+  color: black;
+}
+
 /* REC APPS */
 
 .rec-app-container {

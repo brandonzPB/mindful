@@ -37,6 +37,21 @@ const RecVideos = () => {
         <button className="dest-btns dashboard-route-btn" onClick={() => setDest('dashboard')}>Return to Dashboard</button>
         <button className="dest-btns entry-route-btn" onClick={() => setDest('entry')}>Boost Mindfulness</button>
       </div>
+
+      <div className="video-container">
+        <span className="video-text">5 Minute Guided Breathing Meditation by Diana Winston</span>
+        <iframe title="breathing-meditation"
+          width="560" height="315" src="https://www.youtube.com/embed/YFSc7Ck0Ao0" 
+          frameBorder="0" allowFullScreen className="iframe"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture">
+        </iframe>
+      </div>
+
+      <div id="extra-video-container">
+        <a href="https://dianawinston.com/meditations" target="_blank" rel="noreferrer">
+          <span id="extra-video-text">Click here for more guided meditations by Diana Winston</span>
+        </a>
+      </div>
       
       <div className="videos">
         <div className="video-container">

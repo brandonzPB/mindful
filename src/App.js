@@ -18,7 +18,7 @@ import Settings from './components/Settings';
 
 function App() {
   return (
-    <HashRouter basename="/">
+    <BrowserRouter>
       <div className="App">
         <UserContextProvider>
           <LogoutButton />
@@ -37,7 +37,7 @@ function App() {
           <Route exact path="/entry" component={EntryForm} />
         </UserContextProvider>
       </div>
-    </HashRouter>
+    </BrowserRouter>
   );
 }
 
