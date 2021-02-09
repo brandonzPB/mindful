@@ -20,6 +20,8 @@ const Timer = () => {
 
     if (!timer.countdown) return;
 
+    adjustInput();
+
     const meditation = setTimeout(() => {
       if (timer.seconds === 0) {
 
@@ -78,25 +80,31 @@ const Timer = () => {
     )
   }
 
-  const handleSubmit = event => {
-    event.preventDefault();
-
-    if (timer.seconds > 59) {
+  const adjustInput = () => {
+    if ((timer.seconds * 1) > 59) {
       setTimer({
         ...timer,
         seconds: 59
       });
-    } else if (timer.minutes > 59) {
+    }
+    
+    if ((timer.minutes * 1) > 59) {
       setTimer({
         ...timer,
         minutes: 59
       });
-    } else if (timer.hours > 3) {
+    }
+    
+    if ((timer.hours * 1) > 5) {
       setTimer({
         ...timer,
-        hours: 3
+        hours: 5
       });
     }
+  }
+
+  const handleSubmit = event => {
+    event.preventDefault();
 
     setTimer({
       ...timer,

@@ -61,16 +61,23 @@ html {
 .btns-container {
   margin: 0 auto;
   text-align: center;
+  display: flex;
+  flex: 1;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 
 .dest-btns {
   font-size: 1.5rem;
-  width: 10.67rem;
+  width: 12rem;
   height: auto;
   border: none;
   border-radius: 3px;
   box-shadow: 0 0 3px black;
-  margin: 2rem auto;
+  margin: 2rem 4rem;
   font-family: 'Montserrat', sans-serif;
   padding: 0.67rem;
   text-align: center;
@@ -489,7 +496,7 @@ html {
 }
 
 #video-icon {
-  width: 32rem;
+  width: 15rem;
   height: auto;
   display: block;
   transition: transform 0.2s;
@@ -503,13 +510,13 @@ html {
 }
 
 #app-icon {
-  width: 38.4rem;
+  width: 20rem;
   height: auto;
   display: block;
   transition: transform 0.2s;
   position: relative;
-  left: 0.67rem;
-  top: 3.33rem;
+  left: -1rem;
+  top: 1rem;
 }
 
 #app-icon:hover {
@@ -517,13 +524,13 @@ html {
 }
 
 #entry-icon {
-  width: 32rem;
+  width: 17rem;
   height: auto;
   display: block;
   transition: transform 0.2s;
   position: relative;
-  left: 40.67rem;
-  top: -10.67rem;
+  left: 39.5rem;
+  top: -15.5rem;
 }
 
 #entry-icon:hover {
@@ -531,13 +538,13 @@ html {
 }
 
 #timer-icon {
-  width: 38.4rem;
+  width: 20rem;
   height: auto;
   display: block;
   transition: transform 0.2s;
   position: relative;
-  left: 8.67rem;
-  top: -6rem;
+  left: 7.5rem;
+  top: -14.5rem;
 }
 
 #timer-icon:hover {
@@ -545,13 +552,13 @@ html {
 }
 
 #info-icon {
-  width: 29.44rem;
+  width: 16rem;
   height: auto;
   display: block;
   transition: transform 0.2s;
   position: relative;
-  left: 33.33rem;
-  top: -21.33rem;
+  left: 32rem;
+  top: -33rem;
 }
 
 #info-icon:hover {
@@ -566,7 +573,7 @@ html {
   text-align: center;
   position: relative;
   left: 0;
-  top: -33.33;
+  top: -30rem;
 }
 
 .app-text {
