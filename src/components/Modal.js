@@ -4,7 +4,7 @@ import { UserContext } from '../contexts/UserContext';
 
 const Modal = ({ modalState, closeModal }) => {
   const { user } = useContext(UserContext);
-  const shareUrl = 'https://brandonzpb.github.io/mindful.io';
+  const shareUrl = 'https://brandonzpb.github.io/mindful';
   const title = 'Live in the Present with Mindful.io';
 
   const downloadTxt = () => {

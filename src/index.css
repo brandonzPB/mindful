@@ -766,7 +766,7 @@ html {
   width: 115.2rem;
   height: 115.2rem;
   position: absolute;
-  top: 0;
+  top: -30rem;
   left: 0;
   display: flex;
   flex: 1;
@@ -780,15 +780,16 @@ html {
   z-index: 3;
   background: linear-gradient(25deg,
     rgba(83,95,45),
-    rgb(111, 124, 68));
+    rgb(111, 124, 68),
+    rgb(132, 144, 91));
   color: rgb(248,244,232);
   width: 36.67rem;
-  height: 46rem;
+  height: 50rem;
   position: relative;
   top: 4rem;
   left: 7.067rem;
   border-radius: 5px;
-  box-shadow: 0.2rem 0.2rem 10rem black;
+  box-shadow: 2rem 2rem 10rem black;
   padding: 1.33rem;
 }
 
@@ -830,7 +831,7 @@ html {
   font-size: 1.5rem;
   font-weight: 600;
   color: black;
-  background-color: rgb(255,218,158);
+  background-color: gold;
   border: none;
   box-shadow: 0 0 2px black;
   border-radius: 4px;
@@ -841,11 +842,11 @@ html {
 }
 
 .save-file-btn:hover {
-  background-color: rgb(250, 223, 178);
+  background-color: rgb(255, 225, 53);
 }
 
 .save-file-btn:active {
-  background-color: rgb(245, 204, 139);
+  background-color: gold;
 }
 
 .close-container {
