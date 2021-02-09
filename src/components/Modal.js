@@ -10,7 +10,7 @@ const Modal = ({ modalState, closeModal }) => {
   const downloadTxt = () => {
     const element = document.createElement('a');
 
-    const file = new Blob([ user.tempText[user.entries - 1].input ], { type: 'text/plain' });
+    const file = new Blob([ user.tempText[user.tempCount - 1].input ], { type: 'text/plain' });
 
     /*
     document.getElementById('entry-input').value

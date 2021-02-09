@@ -77,12 +77,15 @@ const EntryForm = () => {
 
     const count = user.entries + 1;
 
-    const text = { input: entry.text };
+    const tempText = { input: entry.text };
+    
+    const tempCount = user.tempCount + 1;
     
     // update number of entries completed
     dispatch({ type: 'COMPLETE_ENTRY', user: {
       entries: user.entries + 1,
-      text,
+      tempText,
+      tempCount 
     }});
 
     setEntry({
