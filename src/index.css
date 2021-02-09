@@ -33,7 +33,7 @@ html {
   background-repeat: no-repeat;
   background-position: center;
   background-attachment: fixed;
-  font-size: 15px;
+  font-size: 10px;
 }
 
 .App {
@@ -50,8 +50,8 @@ html {
   border: none;
   background-color: rgba(233, 233, 233, 0.6);
   position: absolute;
-  right: 25px;
-  top: 25px;
+  right: 1.67rem;
+  top: 1.67rem;
 }
 
 #logout-btn:hover {
@@ -60,14 +60,14 @@ html {
 
 .dest-btns {
   font-size: 1.5rem;
-  width: 160px;
+  width: 10.67rem;
   height: auto;
   border: none;
   border-radius: 3px;
   box-shadow: 0 0 3px black;
-  margin: 30px 100px;
+  margin: 2rem 6.67rem;
   font-family: 'Montserrat', sans-serif;
-  padding: 10px;
+  padding: 0.67rem;
 }
 
 .dashboard-route-btn {
@@ -90,8 +90,8 @@ html {
 
 .settings-btn-container {
   position: absolute;
-  left: 30px;
-  top: 30px;
+  left: 2rem;
+  top: 2rem;
 }
 
 #settings-btn {
@@ -112,7 +112,7 @@ html {
 /* WELCOME */
 
 .welcome-container {
-  margin: 120px auto 0 auto;
+  margin: 8rem auto 0 auto;
   display: flex;
   flex: 1;
   flex-wrap: wrap;
@@ -120,8 +120,8 @@ html {
   align-items: center;
   justify-content: center;
   color: rgb(248,244,232);
-  font-size: 7rem;
-  width: 90%;
+  font-size: 5rem;
+  width: 102.4;
   height: auto;
 }
 
@@ -131,7 +131,7 @@ html {
 
 .welcome-text {
   display: block;
-  margin: -30px auto;
+  margin: -2rem auto;
 }
 
 .welcome-text-info {
@@ -145,7 +145,7 @@ html {
 }
 
 .create-container {
-  margin: 20px auto 0 auto;
+  margin: 1rem auto 0 auto;
   display: flex;
   flex: 1;
   flex-wrap: wrap;
@@ -160,22 +160,22 @@ html {
     rgba(49, 49, 49, 0.7));
   width: 500px;
   height: auto;
-  padding: 30px 5px;
+  padding: 2rem 0.33rem;
   border-radius: 10px;
 }
 
 .login-info {
   font-size: 2rem;
   display: block;
-  margin: 40px auto 20px auto;
+  margin: 2.67rem auto 1.33rem auto;
 }
 
 #create-btn {
   font-size: 1.5rem;
   color: black;
   background-color: rgb(255, 226, 61);
-  width: 275px;
-  height: 40px;
+  width: 18.33rem;
+  height: 2.67rem;
   font-weight: 600;
   border-radius: 5px;
   border: none;
@@ -200,13 +200,13 @@ html {
 
 .login-input-label {
   display: block;
-  margin: 10px auto;
+  margin: 0.67rem auto;
 }
 
 .login-input {
   display: block;
-  margin: 0 auto 40px auto;
-  width: 275px;
+  margin: 0 auto 2.67rem auto;
+  width: 18.33rem;
   font-size: 1.5rem;
   box-shadow: 0 0 6px black;
 }
@@ -214,13 +214,13 @@ html {
 .login-btn {
   display: block;
   text-align: center;
-  margin: 40px auto 0 auto;
+  margin: 2.67rem auto 0 auto;
   background-color: rgb(255, 226, 61);
   color: black;
   border: none;
   box-shadow: 0 0 3px black;
-  width: 110px;
-  height: 35px;
+  width: 7.33rem;
+  height: 2.33rem;
   border-radius: 5px;
   font-weight: 600;
   font-size: 1.5rem;
@@ -249,7 +249,7 @@ html {
 }
 
 .create-user-container {
-  margin: 80px auto;
+  margin: 5.33rem auto;
   display: flex;
   flex: 1;
   flex-wrap: wrap;
@@ -263,9 +263,9 @@ html {
   border: none;
   box-shadow: 0 0 3px black;
   border-radius: 5px;
-  width: 500px;
+  width: 33.33rem;
   height: auto;
-  padding: 40px 20px;
+  padding: 2.67rem 1.33rem;
 }
 
 #create-user-form {}
@@ -278,7 +278,7 @@ html {
 
 .create-input {
   display: block;
-  margin: 20px auto 40px auto;
+  margin: 1.33rem auto 2.67rem auto;
   font-size: 1.75rem;
   box-shadow: 0 0 6px black;
 }
@@ -289,8 +289,8 @@ html {
   border: none;
   border-radius: 5px;
   box-shadow: 0 0 3px black;
-  width: 200px;
-  height: 35px;
+  width: 13.33rem;
+  height: 2.33rem;;
   font-size: 1.5rem;
   font-weight: 600;
 }
@@ -298,7 +298,7 @@ html {
 /* TERMS */
 
 .terms-container {
-  margin: 100px auto 0 auto;
+  margin: 6.67rem auto 0 auto;
   display: flex;
   flex: 1;
   flex-wrap: wrap;
@@ -307,7 +307,7 @@ html {
   justify-content: center;
   text-align: center;
   color: white;
-  width: 85%;
+  width: 108.8rem;
   font-size: 2.5rem;
 }
 
@@ -322,32 +322,32 @@ html {
 }
 
 .terms-text-container {
-  width: 85%;
+  width: 108.8rem;
 }
 
 .terms-header {
   font-size: 2.5rem;
   display: block;
-  margin: 30px auto;
+  margin: 2rem auto;
 }
 
 .terms-text {
   font-size: 2.25rem;
-  margin: 30px auto;
+  margin: 2rem auto;
 }
 
 #accept-container {
-  margin: 40px auto;
+  margin: 2.67rem auto;
 }
 
 #accept-btn {
   display: block;
-  margin: 20px auto;
+  margin: 1.33rem auto;
   font-size: 2rem;
   background-color: gold;
   font-weight: 600;
-  width: 230px;
-  height: 50px;
+  width: 15.33rem;
+  height: 3.33rem;
   border: none;
   box-shadow: 0 0 3px black;
   border-radius: 5px;
@@ -362,13 +362,13 @@ html {
 }
 
 #reject-container {
-  margin: 30px auto;
+  margin: 2rem auto;
 }
 
 #reject-btn {
   font-size: 1.75rem;
   display: block;
-  margin: 30px auto;
+  margin: 2rem auto;
   background-color: rgb(216, 118, 118);
   border: none;
 }
@@ -376,8 +376,8 @@ html {
 /* INFO */
 
 .info-parent-container {
-  margin: 50px auto;
-  width: 85%;
+  margin: 3.33rem auto;
+  width: 108.8rem;
   display: flex;
   flex: 1;
   flex-wrap: wrap;
@@ -389,14 +389,14 @@ html {
 
 .info-container {
   margin: 0 auto;
-  padding: 20px;
+  padding: 1.33rem;
   height: auto;
-  width: 60%;
-  padding: 20px;
+  width: 76.8rem;
+  padding: 1.33rem;
   background: linear-gradient(25deg,
   #ffffe8e7,
     #f1f1c4e0);
-  border-radius: 15px;
+  border-radius: 1rem;
   font-size: 1.2rem;
   box-shadow: 0 0 4px black;
 }
@@ -414,7 +414,7 @@ html {
 }
 
 .info-header {
-  margin: 30px auto 20px auto;
+  margin: 2rem auto 1.33rem auto;
   display: block;
   color: white;
   font-size: 2rem;
@@ -430,14 +430,14 @@ html {
 /* DASHBOARD */
 
 .dashboard-container {
-  margin: 40px auto 80px auto;
+  margin: 2.67rem auto 5.33rem auto;
   display: flex;
   flex: 1;
   flex-wrap: nowrap;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 85%;
+  width: 108.8rem;
   height: auto; 
   color: rgb(248,244,232);
 }
@@ -453,11 +453,11 @@ html {
 }
 
 .body {
-  margin: 20px auto;
+  margin: 1.33rem auto;
   background-color: rgba(255, 255, 255, 0.7);
-  border-radius: 50%;
-  width: 850px;
-  height: 850px;
+  border-radius: 64rem;
+  width: 56.67rem;
+  height: 56.67rem;
 }
 
 .links-container {
@@ -480,13 +480,13 @@ html {
 }
 
 #video-icon {
-  width: 25%;
+  width: 32rem;
   height: auto;
   display: block;
   transition: transform 0.2s;
   position: relative;
-  left: 315px;
-  top: 30px;
+  left: 21rem;
+  top: 2rem;
 }
 
 #video-icon:hover {
@@ -494,13 +494,13 @@ html {
 }
 
 #app-icon {
-  width: 30%;
+  width: 38.4rem;
   height: auto;
   display: block;
   transition: transform 0.2s;
   position: relative;
-  left: 10px;
-  top: 50px;
+  left: 0.67rem;
+  top: 3.33rem;
 }
 
 #app-icon:hover {
@@ -508,13 +508,13 @@ html {
 }
 
 #entry-icon {
-  width: 25%;
+  width: 32rem;
   height: auto;
   display: block;
   transition: transform 0.2s;
   position: relative;
-  left: 610px;
-  top: -160px;
+  left: 40.67rem;
+  top: -10.67rem;
 }
 
 #entry-icon:hover {
@@ -522,13 +522,13 @@ html {
 }
 
 #timer-icon {
-  width: 30%;
+  width: 38.4rem;
   height: auto;
   display: block;
   transition: transform 0.2s;
   position: relative;
-  left: 130px;
-  top: -90px;
+  left: 8.67rem;
+  top: -6rem;
 }
 
 #timer-icon:hover {
@@ -536,13 +536,13 @@ html {
 }
 
 #info-icon {
-  width: 23%;
+  width: 29.44rem;
   height: auto;
   display: block;
   transition: transform 0.2s;
   position: relative;
-  left: 500px;
-  top: -320px;
+  left: 33.33rem;
+  top: -21.33rem;
 }
 
 #info-icon:hover {
@@ -557,7 +557,7 @@ html {
   text-align: center;
   position: relative;
   left: 0;
-  top: -500px;
+  top: -33.33;
 }
 
 .app-text {
@@ -568,8 +568,8 @@ html {
 /* REC VIDEOS */
 
 .rec-videos-container {
-  margin: 50px auto;
-  width: 85%;
+  margin: 3.33rem auto;
+  width: 108.8rem;
   height: auto;
   display: flex;
   flex: 1;
@@ -590,7 +590,7 @@ html {
 }
 
 .video-container {
-  margin: 20px auto;
+  margin: 1.33rem auto;
   display: block;
 }
 
@@ -598,18 +598,18 @@ html {
   display: block;
   font-size: 1.75rem;
   color: rgba(255, 255, 255, 1);
-  margin: 50px auto 0 auto;
+  margin: 3.33rem auto 0 auto;
 }
 
 .iframe {
   display: block;
-  margin: 10px auto 70px auto;
+  margin: 0.67rem auto 4.67rem auto;
 }
 
 /* REC APPS */
 
 .rec-app-container {
-  margin: 50px auto;
+  margin: 3.33rem auto;
   display: flex;
   flex: 1;
   flex-wrap: wrap;
@@ -626,11 +626,11 @@ html {
 }
 
 .app-list {
-  margin: 70px auto;
+  margin: 4.67rem auto;
 }
 
 .app-list-item {
-  margin: 120px auto;
+  margin: 8rem auto;
 }
 
 .logo-img {
@@ -642,34 +642,34 @@ html {
 }
 
 .insight-img {
-  width: 50%;
+  width: 64rem;
   height: auto;
 }
 
 .headspace-img {
-  width: 50%;
+  width: 64rem;
   height: auto;
 }
 
 .stop-img {
-  width: 50%;
+  width: 64rem;
   height: auto;
 }
 
 .buddhify-img {
-  width: 50%;
+  width: 64rem;
   height: auto;
 }
 
 .ten-percent-img {
-  width: 50%;
+  width: 64rem;
   height: auto;
 }
 
 /* ENTRY PAGE */
 
 .entry-container {
-  margin: 50px auto;
+  margin: 3.33rem auto;
   display: flex;
   flex: 1;
   flex-wrap: wrap;
@@ -685,38 +685,38 @@ html {
 }
 
 .form-container {
-  width: 75%;
-  max-width: 85%;
+  width: 96rem;
+  max-width: 108.8rem;
 }
 
 .entry-form {
-  margin: 40px auto;
+  margin: 2.67rem auto;
   font-family: 'Raleway', sans-serif;
-  max-width: 95%;
+  max-width: 121.6rem;
 }
 
 #entry-input {
   display: block;
   text-align: left;
-  padding: 10px;
+  padding: 0.67rem;
   margin: 0 auto;
-  max-width: 1000px;
-  max-height: 600px;
+  max-width: 66.67rem;
+  max-height: 40rem;
   font-family: 'Raleway', sans-serif;
   font-size: 1.75rem;
 }
 
 .submit-btn {
   display: block;
-  margin: 40px auto;
+  margin: 2.67rem auto;
   font-size: 2rem;
   background-color: rgb(52,141,223);
   border: none;
   box-shadow: 0 0 3px black;
   color: rgb(248,244,232);
-  width: 180px;
+  width: 12rem;
   height: auto;
-  padding: 10px;
+  padding: 0.67rem;
   border-radius: 5px;
 }
 
@@ -728,8 +728,8 @@ html {
 
 .modal-parent-container {
   z-index: 2;
-  width: 90%;
-  height: 90%;
+  width: 115.2rem;
+  height: 115.2rem;
   position: absolute;
   top: 0;
   left: 0;
@@ -747,14 +747,14 @@ html {
     rgba(83,95,45),
     rgb(111, 124, 68));
   color: rgb(248,244,232);
-  width: 550px;
-  height: 690px;
+  width: 36.67rem;
+  height: 46rem;
   position: relative;
-  top: 60px;
-  left: 106px;
+  top: 4rem;
+  left: 7.067rem;
   border-radius: 5px;
-  box-shadow: 3px 3px 150px black;
-  padding: 20px;
+  box-shadow: 0.2rem 0.2rem 10rem black;
+  padding: 1.33rem;
 }
 
 .fb-share-container {
@@ -764,13 +764,13 @@ html {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  margin: 10px auto 50px auto;
+  margin: 0.67rem auto 3.33rem auto;
 }
 
 .fb-share-text {
   display: block;
   font-size: 2.5rem;
-  margin: 20px auto;
+  margin: 1.33rem auto;
 }
 
 .fb-share-btn {}
@@ -799,10 +799,10 @@ html {
   border: none;
   box-shadow: 0 0 2px black;
   border-radius: 4px;
-  margin: 20px auto;
-  width: 130px;
+  margin: 1.33rem auto;
+  width: 8.67rem;
   height: auto;
-  padding: 10px;
+  padding: 0.67rem;
 }
 
 .save-file-btn:hover {
@@ -814,7 +814,7 @@ html {
 }
 
 .close-container {
-  margin: 20px auto;
+  margin: 1.33rem auto;
 }
 
 .close-btn {
@@ -823,7 +823,7 @@ html {
   border: none;
   border-radius: 4px;
   box-shadow: 0 0 2px black;
-  padding: 10px;
+  padding: 0.67rem;
   background-color: rgb(127,93,83);
   color: white;
 }
@@ -831,7 +831,7 @@ html {
 /* TIMER */
 
 .timer-container {
-  margin: 80px auto;
+  margin: 5.33rem auto;
   display: flex;
   flex: 1;
   flex-wrap: wrap;
@@ -842,7 +842,7 @@ html {
 }
 
 .timer-form {
-  margin: 80px auto;
+  margin: 5.33rem auto;
 }
 
 .timer-input {
@@ -850,7 +850,7 @@ html {
   border: none;
   font-size: 7rem;
   color: white;
-  width: 130px;
+  width: 8.67rem;
   text-align: center;
 }
 
@@ -865,46 +865,46 @@ html {
   box-shadow: 0 0 3px black;
   color: rgb(248,244,232);
   font-size: 2rem;
-  width: 170px;
+  width: 11.33rem;
   height: auto;
-  padding: 10px;
-  margin: 60px auto;
+  padding: 0.67rem;
+  margin: 4rem auto;
   text-align: center;
 }
 
 .timer-btns-container {
-  margin: 40px auto;
+  margin: 2.67rem auto;
   display: block;
 }
 
 #pause-btn {
   background-color:  rgb(248,244,232);
   color: black;
-  margin: 0 20px;
+  margin: 0 1.33rem;
   border: none;
   box-shadow: 0 0 3px black;
   font-size: 1.35rem;
-  width: 135px;
+  width: 9rem;
   height: auto;
-  padding: 10px;
+  padding: 0.67rem;
 }
 
 #reset-btn {
   background-color: rgb(216,43,43);
   color: white;
-  margin: 0 20px;
+  margin: 0 1.33re,;
   border: none;
   box-shadow: 0 0 3px black;
   font-size: 1.35rem;
-  width: 130px;
+  width: 8.67rem;
   height: auto;
-  padding: 10px;
+  padding: 0.67rem;
 }
 
 /* SETTINGS */
 
 .settings-container {
-  margin: 50px auto;
+  margin: 3.33rem auto;
   display: flex;
   flex: 1;
   flex-wrap: wrap;
@@ -912,13 +912,13 @@ html {
   align-items: center;
   justify-content: center;
   text-align: center;
-  width: 85%;
+  width: 108.8rem;
   height: auto;
 }
 
 #text-container {
-  width: 80%;
-  margin: 30px auto;
+  width: 102.4rem;
+  margin: 2rem auto;
 }
 
 .delete-text {
@@ -928,32 +928,32 @@ html {
 }
 
 .delete-form {
-  margin: 30px auto;
+  margin: 2rem auto;
   background: linear-gradient(25deg,
     rgba(0, 0, 0, 0.7),
     rgba(40, 40, 40, 0.7));
   border: none;
   border-radius: 5px;
-  width: 400px;
+  width: 26.67rem;
   height: auto;
-  padding: 40px 20px;
+  padding: 2.67rem 1.33rem;
 }
 
 .delete-label {
   color: white;
   font-size: 1.75rem;
   display: block;
-  margin: 10px auto;
+  margin: 0.67 auto;
 }
 
 .delete-input {
   font-size: 1.5rem;
-  margin: 10px auto 30px auto;
+  margin: 0.67rem auto 2rem auto;
   box-shadow: 0 0 5px black;
 }
 
 #delete-user-btn {
-  margin: 20px auto;
+  margin: 1.33rem auto;
   display: block;
   background-color: rgb(231, 119, 119);
   border: none;

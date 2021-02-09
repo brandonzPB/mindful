@@ -4,7 +4,7 @@ import { UserContext } from '../contexts/UserContext';
 import userService from '../services/userService';
 
 const CreateUser = () => {
-  const { createUser } = useContext(UserContext);
+  const { link, setDest, createUser } = useContext(UserContext);
 
   const [account, setAccount] = useState({
     name: '',
@@ -92,6 +92,14 @@ const CreateUser = () => {
     }
   }
 
+  if (link.dest === 'welcome') {
+    return (
+      <Route exact path="/create">
+        <Redirect to="/" />
+      </Route>
+    )
+  }
+
   return (
     <div className="create-parent-container">
       {
@@ -100,7 +108,12 @@ const CreateUser = () => {
             <Redirect to="/terms" />
           </Route>
           : <div className="create-form-container">
+            <div className="btns-container">
+              <button className="dest-btns dashboard-route-btn" onClick={() => setDest('welcome')}>Return to Login</button>
+            </div>
+
             <span className="create-header">Create Your Account</span>
+            
             <div className="create-user-container">
               <form onSubmit={handleSubmit} id="create-user-form">
                 <label className="create-input-label">Name:</label>
