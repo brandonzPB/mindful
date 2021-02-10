@@ -128,6 +128,7 @@ const Dashboard = () => {
             onClick={() => setDest('videos')} 
             onMouseOver={handleMouseOver} 
             onMouseOut={handleMouseOut} />
+          <span className="icon-text">Guided Meditation Videos</span>
         </div>
 
         <div className="body-icon-link" id="body-apps-link">
@@ -136,6 +137,7 @@ const Dashboard = () => {
             onClick={() => setDest('apps')} 
             onMouseOver={handleMouseOver} 
             onMouseOut={handleMouseOut} />
+          <span className="icon-text">Guided Meditation Apps</span>
         </div>
 
         <div className="body-icon-link" id="body-entry-link">
@@ -144,6 +146,7 @@ const Dashboard = () => {
             onClick={() => setDest('entry')} 
             onMouseOver={handleMouseOver} 
             onMouseOut={handleMouseOut} />
+          <span className="icon-text">Boost Mindfulness</span>
         </div>
 
         <div className="body-icon-link" id="body-timer-link">
@@ -152,6 +155,7 @@ const Dashboard = () => {
             onClick={() => setDest('timer')} 
             onMouseOver={handleMouseOver} 
             onMouseOut={handleMouseOut} />
+          <span className="icon-text">Meditation Timer</span>
         </div>
 
         <div className="body-icon-link" id="body-info-link">
@@ -160,8 +164,10 @@ const Dashboard = () => {
             onClick={() => setDest('info')} 
             onMouseOver={handleMouseOver} 
             onMouseOut={handleMouseOut} />
+          <span className="icon-text">Mindfulness Info</span>
         </div>
       </div>
+      
       <div className="app-text-container">
         <span className="app-text">
           {
@@ -169,7 +175,7 @@ const Dashboard = () => {
               : title.ref === 'video' ? 'Guided Meditation Videos'
               : title.ref === 'app' ? 'Meditation Apps'
               : title.ref === 'timer' ? 'Meditation Timer'
-              : title.ref === 'entry' ? 'Mindfulness Questions'
+              : title.ref === 'entry' ? 'Boost Mindfulness'
               : title.ref === 'info' ? 'Mindfulness Info' : ''
           }
         </span>

@@ -13,6 +13,10 @@
   color: rgb(248,244,232);
 }
 
+.icon-text {
+  display: none;
+}
+
 .dashboard-top-text {
   font-size: 3rem;
   text-align: center;
@@ -136,4 +140,157 @@
   color: rgba(0, 0, 0, 0.815);
 }
 
-@media only screen and (max-device-width: 450px) {}
+/* MOBILE */
+
+@media (max-width: 900px) {
+  .dashboard-container { 
+    color: rgb(248,244,232);
+    width: 90%;
+    margin: 6rem auto;
+  }
+  
+  .dashboard-top-text {
+    font-size: 3rem;
+  }
+  
+  .dashboard-top-text-info {
+    font-size: 1.9rem;
+  }
+  
+  .body {
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 15px;
+    width: 100%;
+    height: auto;
+  }
+  
+  .links-container {
+  }
+  
+  .dashboard-header {
+    font-size: 1.8rem;
+  }
+  
+  .dashboard-text {
+    font-size: 1.4rem;
+  }
+  
+  .dashboard-text-link {
+    font-size: 1.4rem;
+  }
+  
+  #video-icon {
+    width: 15rem;
+    height: auto;
+    position: relative;
+    left: 0;
+    margin-bottom: 3rem;
+  }
+
+  #body-videos-link {
+    text-align: center;
+    margin: 0 auto;
+    display: flex;
+    flex: 1;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 4rem;
+  }
+  
+  #app-icon {
+    width: 20rem;
+    height: auto;
+    position: relative;
+    left: 0;
+    margin-bottom: 2rem
+  }
+
+  #body-apps-link {
+    text-align: center;
+    margin: 0 auto;
+    display: flex;
+    flex: 1;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 4rem;
+  }
+  
+  #entry-icon {
+    width: 17rem;
+    height: auto;
+    position: relative;
+    left: 0;
+    top: 2.5rem;
+    margin-bottom: 2rem;
+  }
+
+  #body-entry-link {
+    text-align: center;
+    margin: 0 auto;
+    display: flex;
+    flex: 1;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 3rem;
+  }
+  
+  #timer-icon {
+    width: 19rem;
+    height: auto;
+    position: relative;
+    left: 0;
+    top: 3rem;
+    margin-bottom: 2rem;
+  }
+
+  #body-timer-link {
+    text-align: center;
+    margin: 0 auto;
+    display: flex;
+    flex: 1;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 4rem;
+  }
+  
+  #info-icon {
+    width: 15rem;
+    height: auto;
+    position: relative;
+    left: 0;
+    top: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  #body-info-link {
+    text-align: center;
+    margin: 0 auto;
+    display: flex;
+    flex: 1;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 4rem;
+  }
+  
+  .app-text-container {
+    display: none;
+  }
+
+  .icon-text {
+    display: block;
+    font-size: 2rem;
+    color: black;
+    text-align: center;
+    margin: 0 auto;
+  }
+}

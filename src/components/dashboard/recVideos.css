@@ -58,4 +58,47 @@
   color: black;
 }
 
-@media only screen and (max-device-width: 450px) {}
+/* MOBILE */
+
+@media (max-width: 900px) {
+  .rec-videos-container {
+    width: 90%;
+    height: auto;
+    margin: 8rem auto;
+    display: block;
+  }
+  
+  .videos-header {
+    color: rgba(255, 255, 255, 1);
+    font-size: 2rem;
+  }
+  
+  .video-container {
+    margin: 0 auto;
+    width: 80%;
+  }
+  
+  .video-text {
+    font-size: 1.75rem;
+    color: rgba(255, 255, 255, 1);
+  }
+  
+  iframe {
+    width: 100%;
+  }
+  
+  #extra-video-container {
+    margin: 8rem auto;
+  }
+  
+  #extra-video-container a,
+  #extra-video-container a:link,
+  #extra-video-container a:visited {
+    color: white;
+    text-decoration: none;
+  }
+  
+  #extra-video-text {
+    font-size: 2rem;
+  }
+}

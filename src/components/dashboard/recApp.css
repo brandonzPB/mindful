@@ -58,4 +58,36 @@
   height: auto;
 }
 
-@media only screen and (max-device-width: 450px) {}
+/* MOBILE */
+
+@media (max-width: 900px) {
+  .rec-app-container {
+    display: block;
+    width: 90%;
+    margin: 6rem auto;
+  }
+  
+  .rec-text {
+    color: rgba(255, 255, 255, 1);
+    font-size: 2rem;
+    line-height: 3rem;
+  }
+
+  .app-list-container {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .app-list {
+    text-align: left;
+  }
+  
+  .app-list-item {
+    list-style-type: none;
+  }
+  
+  .logo-img {
+    width: 100%;
+    height: auto;
+  }
+}
