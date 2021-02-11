@@ -2,17 +2,19 @@
 
 .modal-parent-container {
   z-index: 2;
-  width: 115.2rem;
-  height: 115.2rem;
-  position: absolute;
-  top: -30rem;
-  left: 0;
+  width: auto;
+  height: auto;
   display: flex;
   flex: 1;
   flex-direction: row;
   flex-wrap: nowrap;
   align-items: center;
   justify-content: center;
+  margin: 6rem auto;
+  text-align: center;
+  position: relative;
+  top: -55rem;
+  left: 0;
 }
 
 .modal-container {
@@ -24,9 +26,6 @@
   color: rgb(248,244,232);
   width: 36.67rem;
   height: 50rem;
-  position: relative;
-  top: 4rem;
-  left: 7.067rem;
   border-radius: 5px;
   box-shadow: 2rem 2rem 10rem black;
   padding: 1.33rem;
