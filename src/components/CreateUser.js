@@ -116,7 +116,7 @@ const CreateUser = () => {
             
             <div className="create-user-container">
               <form onSubmit={handleSubmit} id="create-user-form">
-                <label className="create-input-label">Name:</label>
+                <label className="create-input-label">Username:</label>
                 <input 
                   style={{ border: err.ref === 'name' ? '2px solid red' : 'none' }}
                   type="text"

@@ -88,7 +88,7 @@ const Login = () => {
   return (
     <div className="login-container">
       <form onSubmit={handleSubmit} className="login-form">
-        <label className="login-input-label">Name:</label>
+        <label className="login-input-label">Username:</label>
         <input 
           style={{ border: err.status ? '2px solid red' : 'none' }}
           type="name"
