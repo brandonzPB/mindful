@@ -27,7 +27,9 @@ const Welcome = () => {
       <div className="welcome-login-container">
         <span className="welcome-text">welcome to mindful.io</span>
 
-        <span className="welcome-text-info">The free website that helps you be more at peace in your daily life with a simple, healthy habit</span>
+        <div className="welcome-text-info-container">
+          <span className="welcome-text-info">The free website that helps you be more at peace in your daily life with a simple, healthy habit</span>
+        </div>
         
         <div className="welcome-user-container">
           <div className="create-container">

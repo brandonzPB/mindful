@@ -508,9 +508,16 @@ html {
   
   .welcome-text {
   }
+
+  .welcome-text-info-container {
+    height: auto;
+    line-height: 2.5rem;
+    margin: 2rem auto;
+  }
   
   .welcome-text-info {
     font-size: 2rem;
+    height: 1rem;
   }
   
   .login-btn-container {
