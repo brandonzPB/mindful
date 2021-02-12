@@ -13,35 +13,9 @@ const UserContextProvider = (props) => {
       : {};
   });
 
-  const history = useHistory();
-
   useEffect(() => {
     localStorage.setItem('my-user', JSON.stringify(user));
   }, [user]);
-
-  const [locationKeys, setLocationKeys] = useState([]);
-
-  useEffect(() => {
-    return history.listen(location => {
-      if (history.action === 'PUSH') {
-        setLocationKeys([ location.key ]);
-      }
-
-      if (history.action === 'POP') {
-        if (locationKeys[1] === location.key) {
-          setLocationKeys(([ _, ...keys]) => keys)
-
-          // handle forward event
-          setDest('dashboard');
-        } else {
-          setLocationKeys((keys) => [ location.key, ...keys ]);
-
-          // handle back event
-          setDest('dashboard');
-        }
-      }
-    });
-  }, [locationKeys]);
 
   const [link, setLink] = useState({ dest: '' });
 

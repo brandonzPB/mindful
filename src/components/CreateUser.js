@@ -1,10 +1,36 @@
-import React, { useState, useContext } from 'react';
-import { Route, Redirect } from 'react-router-dom';
+import React, { useState, useContext, useEffect } from 'react';
+import { Route, Redirect, useHistory } from 'react-router-dom';
 import { UserContext } from '../contexts/UserContext';
 import userService from '../services/userService';
 
 const CreateUser = () => {
   const { link, setDest, createUser } = useContext(UserContext);
+
+  const history = useHistory();
+
+  const [locationKeys, setLocationKeys] = useState([]);
+
+  useEffect(() => {
+    return history.listen(location => {
+      if (history.action === 'PUSH') {
+        setLocationKeys([ location.key ]);
+      }
+
+      if (history.action === 'POP') {
+        if (locationKeys[1] === location.key) {
+          setLocationKeys(([ _, ...keys]) => keys)
+
+          // handle forward event
+          setDest('login');
+        } else {
+          setLocationKeys((keys) => [ location.key, ...keys ]);
+
+          // handle back event
+          setDest('login');
+        }
+      }
+    });
+  }, [locationKeys]);
 
   const [account, setAccount] = useState({
     name: '',
@@ -15,6 +41,14 @@ const CreateUser = () => {
   });
 
   const [err, setErr] = useState({ ref: '' });
+
+  if (link.dest === 'login') {
+    return (
+      <Route exact path="/create">
+        <Redirect to="/" />
+      </Route>
+    )
+  }
 
   const handleChange = event => {
     const { name, value } = event.target;
