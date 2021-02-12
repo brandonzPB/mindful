@@ -573,6 +573,9 @@ html {
   /* CREATE USER */
   
   .create-parent-container {
+    display: block;
+    width: 100%;
+    margin: 5rem auto;
   }
   
   .create-header {
@@ -587,6 +590,8 @@ html {
     border: none;
     box-shadow: 0 0 3px black;
     border-radius: 5px;
+    display: block;
+    width: auto;
   }
   
   #create-user-form {}
@@ -599,6 +604,7 @@ html {
   .create-input {
     font-size: 2.5rem;
     box-shadow: 0 0 6px black;
+    width: 23rem;
   }
   
   .create-user-btn {
@@ -611,6 +617,7 @@ html {
     width: 24rem;
     height: 3rem;
     font-weight: 600;
+    margin: 3rem auto;
   }
   
   /* TERMS */
