@@ -276,6 +276,17 @@ html {
   padding: 2.67rem 1.33rem;
 }
 
+#error-msg-container {
+  margin: 1rem auto;
+  text-align: center;
+}
+
+#input-error {
+  font-size: 2rem;
+  text-align: center;
+  margin: 0 auto;
+}
+
 #create-user-form {}
 
 .create-input-label {

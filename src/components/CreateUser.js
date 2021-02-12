@@ -122,6 +122,15 @@ const CreateUser = () => {
 
             <span className="create-header">Create Your Account</span>
             
+            <div id="error-msg-container">
+              <span id="input-error">
+                {
+                  err.ref === 'name' ? 'Username is already taken'
+                    : err.ref === 'email' ? 'Email is already taken' : ''
+                }
+              </span>
+            </div>
+            
             <div className="create-user-container">
               <form onSubmit={handleSubmit} id="create-user-form">
                 <label className="create-input-label">Username:</label>
