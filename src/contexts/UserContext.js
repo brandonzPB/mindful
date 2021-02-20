@@ -1,5 +1,4 @@
 import React, { useState, useReducer, createContext, useEffect } from 'react';
-import { useHistory } from 'react-router-dom';
 import userReducer from '../reducers/userReducer';
 import userService from '../services/userService';
 
@@ -13,7 +12,30 @@ const UserContextProvider = (props) => {
       : {};
   });
 
+  const [clearUser, setClearUser] = useState({
+    state: false,
+    called: false
+  });
+
   useEffect(() => {
+    if (clearUser.state && !clearUser.called) {
+      logout();
+      
+      setClearUser({
+        ...clearUser,
+        called: true
+      });
+    }
+  }, [clearUser]);
+
+  useEffect(() => {
+    if (!user.name) {
+      setClearUser({
+        ...clearUser,
+        state: true
+      });
+    }
+    
     localStorage.setItem('my-user', JSON.stringify(user));
   }, [user]);
 
