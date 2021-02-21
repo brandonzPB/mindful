@@ -8,13 +8,14 @@ import chimeSrc from '../../audio/chime.mp3';
 const chimeSound = new Audio(chimeSrc);
 
 const Timer = () => {
-  const { user, link, setDest } = useContext(UserContext);
+  const { link, setDest } = useContext(UserContext);
 
   const [timer, setTimer] = useState({
     seconds: 0,
     minutes: 0,
     hours: 0,
     countdown: false,
+    complete: false,
   });
 
   useEffect(() => {
@@ -32,6 +33,11 @@ const Timer = () => {
 
           if (timer.hours === 0) {
             chimeSound.play();
+
+            setTimer({
+              ...timer,
+              complete: true
+            });
           } else {
             setTimer({
               ...timer,
@@ -59,18 +65,18 @@ const Timer = () => {
     return () => clearTimeout(meditation);
   }, [timer]);
 
-  if (!user.accessToken) {
-    return (
-      <Route exact path="/timer">
-        <Redirect to="/" />
-      </Route>
-    )
-  }
+  // if (!user.accessToken) {
+  //   return (
+  //     <Route exact path="/timer">
+  //       <Redirect to="/" />
+  //     </Route>
+  //   )
+  // }
 
   if (link.dest === 'dashboard') {
     return (
       <Route exact path="/timer">
-        <Redirect to="/dashboard" />
+        <Redirect to="/" />
       </Route>
     )
   }
@@ -186,7 +192,11 @@ const Timer = () => {
         </form>
         <div className="timer-btns-container">
           <button onClick={pauseTimer} id="pause-btn">Pause Timer</button>
-          <button onClick={resetTimer} id="reset-btn">Reset Timer</button>
+          <button onClick={resetTimer} id="reset-btn">
+            {
+              timer.complete ? 'Stop Alarm' : 'Reset Timer'
+            }
+          </button>
         </div>
       </div>
     </div>

@@ -1,49 +1,50 @@
 import React, { useState, useEffect, useContext } from 'react';
 import { Route, Redirect } from 'react-router-dom';
 import { UserContext } from '../../contexts/UserContext';
+import { v4 as uuidv4 } from 'uuid';
 import Entry from './Entry';
 import Modal from './Modal';
 import { entries } from '../../modules/entries';
 import './entry.css';
 
 const EntryForm = () => {
-  const { user, dispatch, updateEntries, link, setDest } = useContext(UserContext);
+  const { link, setDest } = useContext(UserContext);
 
   const [entry, setEntry] = useState({
     text: '',
-    obj: '',
-    selected: false,
+    obj: entries[Math.floor(Math.random() * entries.length)],
+    id: uuidv4()
   });
 
-  let entryIndex;
+  // let entryIndex;
 
-  useEffect(() => {
-    if (entry.selected) return;
+  // useEffect(() => {
+  //   if (entry.selected) return;
 
-    entryIndex = user.entries >= 2
-      ? Math.floor(Math.random() * entries.length)
-      : user.entries;
+  //   entryIndex = user.entries >= 2
+  //     ? Math.floor(Math.random() * entries.length)
+  //     : user.entries;
     
-    setEntry({
-      ...entry,
-      obj: entries[entryIndex]
-    });
-  }, []);
+  //   setEntry({
+  //     ...entry,
+  //     obj: entries[entryIndex]
+  //   });
+  // }, []);
 
   const [modalState, setModalState] = useState({ show: false });
 
-  if (!user.accessToken) {
-    return (
-      <Route exact path="/entry">
-        <Redirect to="/" />
-      </Route>
-    )
-  }
+  // if (!user.accessToken) {
+  //   return (
+  //     <Route exact path="/entry">
+  //       <Redirect to="/" />
+  //     </Route>
+  //   )
+  // }
 
   if (link.dest === 'dashboard') {
     return (
       <Route exact path="/entry">
-        <Redirect to="/dashboard" />
+        <Redirect to="/" />
       </Route>
     )
   }
@@ -76,18 +77,18 @@ const EntryForm = () => {
 
     if (!entry.text.trim()) return;
 
-    const count = user.entries + 1;
+    // const count = user.entries + 1;
 
-    const tempText = { input: entry.text };
+    // const tempText = { input: entry.text };
     
-    const tempCount = user.tempCount + 1;
+    // const tempCount = user.tempCount + 1;
     
     // update number of entries completed
-    dispatch({ type: 'COMPLETE_ENTRY', user: {
-      entries: user.entries + 1,
-      tempText,
-      tempCount 
-    }});
+    // dispatch({ type: 'COMPLETE_ENTRY', user: {
+    //   entries: user.entries + 1,
+    //   tempText,
+    //   tempCount 
+    // }});
 
     setEntry({
       ...entry,
@@ -95,7 +96,7 @@ const EntryForm = () => {
     });
     
     // update database info
-    updateEntries(count);
+    // updateEntries(count);
 
     openModal();
   }
@@ -119,7 +120,7 @@ const EntryForm = () => {
           <button className="submit-btn toggle-button">Complete Entry</button>
         </form>
 
-        <Modal modalState={modalState} closeModal={closeModal} />
+        <Modal modalState={modalState} closeModal={closeModal} entry={entry} />
       </div>
     </div>
   );

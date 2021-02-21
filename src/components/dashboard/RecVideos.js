@@ -4,20 +4,20 @@ import { UserContext } from '../../contexts/UserContext';
 import './recVideos.css';
 
 const RecVideos = () => {
-  const { user, setDest, link } = useContext(UserContext);
+  const { setDest, link } = useContext(UserContext);
 
-  if (!user.accessToken) {
-    return (
-      <Route exact path="/videos">
-        <Redirect to="/" />
-      </Route>
-    )
-  }
+  // if (!user.accessToken) {
+  //   return (
+  //     <Route exact path="/videos">
+  //       <Redirect to="/" />
+  //     </Route>
+  //   )
+  // }
 
   if (link.dest === 'dashboard') {
     return (
       <Route exact path="/videos">
-        <Redirect to="/dashboard" />
+        <Redirect to="/" />
       </Route>
     )
   }

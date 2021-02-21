@@ -11,20 +11,20 @@ import stopImg from '../../images/stop_breathe_think.jpeg';
 import './recApp.css';
 
 const RecApps = () => {
-  const { user, link, setDest } = useContext(UserContext);
+  const { link, setDest } = useContext(UserContext);
 
-  if (!user.accessToken) {
-    return (
-      <Route exact path="/apps">
-        <Redirect to="/" />
-      </Route>
-    )
-  }
+  // if (!user.accessToken) {
+  //   return (
+  //     <Route exact path="/apps">
+  //       <Redirect to="/" />
+  //     </Route>
+  //   )
+  // }
 
   if (link.dest === 'dashboard') {
     return (
       <Route exact path="/apps">
-        <Redirect to="/dashboard" />
+        <Redirect to="/" />
       </Route>
     )
   }

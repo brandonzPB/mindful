@@ -3,32 +3,32 @@ import { FacebookShareButton, FacebookIcon } from 'react-share';
 import { UserContext } from '../../contexts/UserContext';
 import './modal.css';
 
-const Modal = ({ modalState, closeModal }) => {
-  const { user } = useContext(UserContext);
+const Modal = ({ modalState, closeModal, entry }) => {
+  // const { user } = useContext(UserContext);
   const shareUrl = 'https://brandonzpb.github.io/mindful';
   const title = 'Live in the Present with Mindful.io';
 
   const downloadTxt = () => {
     const element = document.createElement('a');
 
-    const file = new Blob([ user.tempText[user.tempCount - 1].input ], { type: 'text/plain' });
+    const file = new Blob([ entry.text ], { type: 'text/plain' });
 
     /*
     document.getElementById('entry-input').value
     */
 
     element.href = URL.createObjectURL(file);
-      element.download = `myFile${user.entries - 1}.txt`;
+      element.download = `myFile${entry.id}.txt`;
     
     document.body.appendChild(element);
     element.click();
   }
 
-  if (!user.accessToken) {
-    return (
-      <div className="empty"></div>
-    )
-  }
+  // if (!user.accessToken) {
+  //   return (
+  //     <div className="empty"></div>
+  //   )
+  // }
 
   if (!modalState.show) {
     return (

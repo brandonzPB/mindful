@@ -17,17 +17,10 @@ import Info from './components/dashboard/Info';
 
 function App() {
   return (
-    <HashRouter basename="/">
+    <BrowserRouter>
       <div className="App">
         <UserContextProvider>
-          <LogoutButton />
-
-          <Route exact path="/" component={Welcome} />
-          <Route exact path="/create" component={CreateUser} />
-          <Route exact path="/terms" component={Terms} />
-
-          <Route exact path="/settings" component={Settings} />
-          <Route exact path="/dashboard" component={Dashboard} />
+          <Route exact path="/" component={Dashboard} />
           <Route exact path="/info" component={Info} />
           
           <Route exact path="/videos" component={RecVideos} />
@@ -36,7 +29,7 @@ function App() {
           <Route exact path="/entry" component={EntryForm} />
         </UserContextProvider>
       </div>
-    </HashRouter>
+    </BrowserRouter>
   );
 }
 

@@ -4,20 +4,20 @@ import { UserContext } from '../../contexts/UserContext';
 import './info.css';
 
 const Info = () => {
-  const { user, link, setDest } = useContext(UserContext);
+  const { link, setDest } = useContext(UserContext);
 
-  if (!user.accessToken) {
-    return (
-      <Route exact path="/info">
-        <Redirect to="/" />
-      </Route>
-    )
-  }
+  // if (!user.accessToken) {
+  //   return (
+  //     <Route exact path="/info">
+  //       <Redirect to="/" />
+  //     </Route>
+  //   )
+  // }
 
   if (link.dest === 'dashboard') {
     return (
       <Route exact path="/info">
-        <Redirect to="/dashboard" />
+        <Redirect to="/" />
       </Route>
     )
   }
@@ -70,7 +70,7 @@ const Info = () => {
           Instead of getting physically stronger or feeling healthier,
           you gain more control and awareness over your own life. Over time, you become more peaceful,
           regardless of what is going on around you and in your body. Like anything worthwhile and long-lasting,
-          it may take a bit of time for you to see the full effecst, but you can feel more peaceful immediately.
+          it may take a bit of time for you to see the full effects, but you can feel more peaceful immediately.
           But all it takes for you to achieve true peace is to sit quietly for however much time you can dedicate in a given day.
           Who wouldn't want that?
         </span>
