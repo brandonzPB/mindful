@@ -17,7 +17,7 @@ import Info from './components/dashboard/Info';
 
 function App() {
   return (
-    <BrowserRouter>
+    <HashRouter basename="/">
       <div className="App">
         <UserContextProvider>
           <Route exact path="/" component={Dashboard} />
@@ -29,7 +29,7 @@ function App() {
           <Route exact path="/entry" component={EntryForm} />
         </UserContextProvider>
       </div>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 
