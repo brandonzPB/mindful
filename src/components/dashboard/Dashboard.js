@@ -155,7 +155,7 @@ const Dashboard = () => {
       </div>
       
       <div className="app-text-container">
-        <span className="app-text">
+        <span className="main-app-text">
           {
             title.ref === 'start' ? 'Hover over one of the icons!'
               : title.ref === 'video' ? 'Guided Meditation Videos'

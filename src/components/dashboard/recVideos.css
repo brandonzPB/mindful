@@ -143,10 +143,16 @@
     color: rgba(255, 255, 255, 1);
     font-size: 2rem;
   }
+
+  #video-modal {
+    width: 100%;
+    height: 60rem;
+    padding: 1rem 0;
+  }
   
   .video-container {
-    margin: 0 auto;
-    width: 80%;
+    margin: 2rem auto;
+    width: 90%;
   }
   
   .video-text {
@@ -171,5 +177,21 @@
   
   #extra-video-text {
     font-size: 2rem;
+  }
+
+  #btns-container {
+    padding-bottom: 6rem;
+  }
+
+  #next-btn {
+    display: block;
+    margin: 2rem auto;
+    position: static;
+  }
+
+  #prev-btn {
+    display: block;
+    margin: 0 auto;
+    position: static;
   }
 }
