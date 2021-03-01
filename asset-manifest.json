@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/mindful/static/css/main.e186a4ce.chunk.css",
-    "main.js": "/mindful/static/js/main.5e58f8ea.chunk.js",
-    "main.js.map": "/mindful/static/js/main.5e58f8ea.chunk.js.map",
+    "main.js": "/mindful/static/js/main.51853080.chunk.js",
+    "main.js.map": "/mindful/static/js/main.51853080.chunk.js.map",
     "runtime-main.js": "/mindful/static/js/runtime-main.38308de4.js",
     "runtime-main.js.map": "/mindful/static/js/runtime-main.38308de4.js.map",
     "static/js/2.eba7e0c5.chunk.js": "/mindful/static/js/2.eba7e0c5.chunk.js",
@@ -28,6 +28,6 @@
     "static/js/runtime-main.38308de4.js",
     "static/js/2.eba7e0c5.chunk.js",
     "static/css/main.e186a4ce.chunk.css",
-    "static/js/main.5e58f8ea.chunk.js"
+    "static/js/main.51853080.chunk.js"
   ]
 }
