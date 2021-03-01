@@ -66,12 +66,12 @@ const Info = () => {
         <br />
         <span className="info-text">Why meditate?</span>
         <span className="info-text">
-          Basically, it's the same fundamental reason someone exercises or follows a healthy diet: to live a healthier, happier life.
-          Instead of getting physically stronger or feeling healthier,
-          you gain more control and awareness over your own life. Over time, you become more peaceful,
-          regardless of what is going on around you and in your body. Like anything worthwhile and long-lasting,
-          it may take a bit of time for you to see the full effects, but you can feel more peaceful immediately.
-          But all it takes for you to achieve true peace is to sit quietly for however much time you can dedicate in a given day.
+          Basically, it's the same fundamental reason someone exercises or follows a plant-based diet: to live a healthier, happier life.
+          Instead of getting physically stronger and healthier, you become mentally stronger and healthier. 
+          You gain more control over your own life. You become more peaceful,
+          regardless of what is going on around you and in your body. Like anything worthwhile, 
+          it may take a bit of time for you to see the full effects, but you can feel more peaceful immediately. 
+          And all it takes is sitting quietly for however much time you can dedicate in a given day.
           Who wouldn't want that?
         </span>
       </div>
