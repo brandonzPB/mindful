@@ -1,0 +1,33 @@
+{
+  "files": {
+    "main.css": "/mindful/static/css/main.e186a4ce.chunk.css",
+    "main.js": "/mindful/static/js/main.5e58f8ea.chunk.js",
+    "main.js.map": "/mindful/static/js/main.5e58f8ea.chunk.js.map",
+    "runtime-main.js": "/mindful/static/js/runtime-main.38308de4.js",
+    "runtime-main.js.map": "/mindful/static/js/runtime-main.38308de4.js.map",
+    "static/js/2.eba7e0c5.chunk.js": "/mindful/static/js/2.eba7e0c5.chunk.js",
+    "static/js/2.eba7e0c5.chunk.js.map": "/mindful/static/js/2.eba7e0c5.chunk.js.map",
+    "static/js/3.ee97d2e7.chunk.js": "/mindful/static/js/3.ee97d2e7.chunk.js",
+    "static/js/3.ee97d2e7.chunk.js.map": "/mindful/static/js/3.ee97d2e7.chunk.js.map",
+    "index.html": "/mindful/index.html",
+    "static/css/main.e186a4ce.chunk.css.map": "/mindful/static/css/main.e186a4ce.chunk.css.map",
+    "static/js/2.eba7e0c5.chunk.js.LICENSE.txt": "/mindful/static/js/2.eba7e0c5.chunk.js.LICENSE.txt",
+    "static/media/app.3cdcc3dc.jpeg": "/mindful/static/media/app.3cdcc3dc.jpeg",
+    "static/media/index.css": "/mindful/static/media/background.795f9b70.jpg",
+    "static/media/chime.c9b3c8a8.mp3": "/mindful/static/media/chime.c9b3c8a8.mp3",
+    "static/media/headspace.f0bd9fb7.jpeg": "/mindful/static/media/headspace.f0bd9fb7.jpeg",
+    "static/media/insight_timer.58ba59b4.jpeg": "/mindful/static/media/insight_timer.58ba59b4.jpeg",
+    "static/media/knowledge.b58e285c.jpeg": "/mindful/static/media/knowledge.b58e285c.jpeg",
+    "static/media/meditate.71e3bd96.jpeg": "/mindful/static/media/meditate.71e3bd96.jpeg",
+    "static/media/stop_breathe_think.e215270f.jpeg": "/mindful/static/media/stop_breathe_think.e215270f.jpeg",
+    "static/media/ten_percent.a46ffa54.jpeg": "/mindful/static/media/ten_percent.a46ffa54.jpeg",
+    "static/media/timer.c68871d7.jpeg": "/mindful/static/media/timer.c68871d7.jpeg",
+    "static/media/video.6ef1bab3.jpeg": "/mindful/static/media/video.6ef1bab3.jpeg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.38308de4.js",
+    "static/js/2.eba7e0c5.chunk.js",
+    "static/css/main.e186a4ce.chunk.css",
+    "static/js/main.5e58f8ea.chunk.js"
+  ]
+}
