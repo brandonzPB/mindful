@@ -66,8 +66,8 @@ const RecVideos = () => {
       </div>
 
       <div id="video-modal">
-        <div id="diana-container">
-          <div className="video-container" style={{ display: currentVideo.id === 0 ? 'block' : 'none' }} >
+        <div id="diana-container" style={{ display: currentVideo.id === 0 ? 'block' : 'none' }} >
+          <div className="video-container" >
             <span className="video-text">5 Minute Guided Breathing Meditation by Diana Winston</span>
             <iframe title="breathing-meditation"
               width="560" height="315" src="https://www.youtube.com/embed/YFSc7Ck0Ao0" 
