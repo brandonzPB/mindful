@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/mindful/static/css/main.e186a4ce.chunk.css",
-    "main.js": "/mindful/static/js/main.d04d69f9.chunk.js",
-    "main.js.map": "/mindful/static/js/main.d04d69f9.chunk.js.map",
-    "runtime-main.js": "/mindful/static/js/runtime-main.38308de4.js",
-    "runtime-main.js.map": "/mindful/static/js/runtime-main.38308de4.js.map",
-    "static/js/2.eba7e0c5.chunk.js": "/mindful/static/js/2.eba7e0c5.chunk.js",
-    "static/js/2.eba7e0c5.chunk.js.map": "/mindful/static/js/2.eba7e0c5.chunk.js.map",
-    "static/js/3.ee97d2e7.chunk.js": "/mindful/static/js/3.ee97d2e7.chunk.js",
-    "static/js/3.ee97d2e7.chunk.js.map": "/mindful/static/js/3.ee97d2e7.chunk.js.map",
+    "main.css": "/mindful/static/css/main.956d3d7e.chunk.css",
+    "main.js": "/mindful/static/js/main.e1d2749c.chunk.js",
+    "main.js.map": "/mindful/static/js/main.e1d2749c.chunk.js.map",
+    "runtime-main.js": "/mindful/static/js/runtime-main.d1cfd8cf.js",
+    "runtime-main.js.map": "/mindful/static/js/runtime-main.d1cfd8cf.js.map",
+    "static/js/2.49fa512f.chunk.js": "/mindful/static/js/2.49fa512f.chunk.js",
+    "static/js/2.49fa512f.chunk.js.map": "/mindful/static/js/2.49fa512f.chunk.js.map",
+    "static/js/3.f4f991ea.chunk.js": "/mindful/static/js/3.f4f991ea.chunk.js",
+    "static/js/3.f4f991ea.chunk.js.map": "/mindful/static/js/3.f4f991ea.chunk.js.map",
     "index.html": "/mindful/index.html",
-    "static/css/main.e186a4ce.chunk.css.map": "/mindful/static/css/main.e186a4ce.chunk.css.map",
-    "static/js/2.eba7e0c5.chunk.js.LICENSE.txt": "/mindful/static/js/2.eba7e0c5.chunk.js.LICENSE.txt",
+    "static/css/main.956d3d7e.chunk.css.map": "/mindful/static/css/main.956d3d7e.chunk.css.map",
+    "static/js/2.49fa512f.chunk.js.LICENSE.txt": "/mindful/static/js/2.49fa512f.chunk.js.LICENSE.txt",
     "static/media/app.3cdcc3dc.jpeg": "/mindful/static/media/app.3cdcc3dc.jpeg",
     "static/media/index.css": "/mindful/static/media/background.795f9b70.jpg",
     "static/media/chime.c9b3c8a8.mp3": "/mindful/static/media/chime.c9b3c8a8.mp3",
@@ -25,9 +25,9 @@
     "static/media/video.6ef1bab3.jpeg": "/mindful/static/media/video.6ef1bab3.jpeg"
   },
   "entrypoints": [
-    "static/js/runtime-main.38308de4.js",
-    "static/js/2.eba7e0c5.chunk.js",
-    "static/css/main.e186a4ce.chunk.css",
-    "static/js/main.d04d69f9.chunk.js"
+    "static/js/runtime-main.d1cfd8cf.js",
+    "static/js/2.49fa512f.chunk.js",
+    "static/css/main.956d3d7e.chunk.css",
+    "static/js/main.e1d2749c.chunk.js"
   ]
 }
