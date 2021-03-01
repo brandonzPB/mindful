@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { FacebookShareButton, FacebookIcon } from 'react-share';
+import { FacebookShareButton, FacebookIcon, TwitterShareButton, TwitterIcon } from 'react-share';
 import { UserContext } from '../../contexts/UserContext';
 import './modal.css';
 
@@ -49,6 +49,13 @@ const Modal = ({ modalState, closeModal, entry }) => {
           >
             <FacebookIcon size={90} round />
           </FacebookShareButton>
+          <TwitterShareButton
+            url={shareUrl}
+            quote={title}
+            className="twitter-share-btn"
+          >
+            <TwitterIcon size={90} round />
+          </TwitterShareButton>
         </div>
 
         <div className="save-file-container">

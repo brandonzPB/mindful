@@ -37,7 +37,7 @@
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  flex-direction: column;
+  flex-direction: row;
   margin: 0.67rem auto 3.33rem auto;
 }
 
@@ -47,7 +47,9 @@
   margin: 1.33rem auto;
 }
 
-.fb-share-btn {}
+.fb-share-btn {
+  display: inline-block;
+}
 
 .save-file-container {
   margin: 0 auto;
@@ -139,7 +141,7 @@
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-    flex-direction: column;
+    flex-direction: row;
     margin: 0.67rem auto 3.33rem auto;
   }
   
